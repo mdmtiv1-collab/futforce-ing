@@ -1,0 +1,58 @@
+# =========================================================================
+# HIGH PERFORMANCE & INSTANT UPDATE CONFIGURATION
+# =========================================================================
+
+# 1. FORCE HTTPS (SSL)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 2. DEFAULT UTF-8 CHARSET
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .xml
+
+# 3. MIME TYPES
+<IfModule mod_mime.c>
+AddType image/webp .webp
+AddType image/jpeg .jpg .jpeg
+AddType application/pdf .pdf
+AddType font/woff2 .woff2
+AddType font/woff .woff
+AddType font/ttf .ttf
+</IfModule>
+
+# 4. GZIP / BROTLI COMPRESSION
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE font/woff font/woff2 application/font-woff2
+</IfModule>
+
+# 5. CACHE CONTROL
+<IfModule mod_headers.c>
+  # HTML: Never cache for 100% instant updates
+  <FilesMatch "\.(html|htm|php)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, post-check=0, pre-check=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # STATIC ASSETS: 1-year immutable cache
+  <FilesMatch "\.(webp|woff2|woff|ttf|svg|ico|png|jpg|jpeg|pdf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/html "access plus 0 seconds"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType font/woff "access plus 1 year"
+ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
