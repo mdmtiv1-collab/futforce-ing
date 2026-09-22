@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en" class="dark h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <title>VIP Members Area | +162 Routines & FUTFORCE Method</title>
+  
+  <!-- Google Fonts: Archivo Black & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'sport-green': '#39FF14',
+            'sport-dark': '#0B0F12',
+            'sport-surface': '#131920',
+            'sport-card': '#1A232E',
+            'sport-border': '#283545',
+            'sport-gray': '#94A3B8',
+          },
+          fontFamily: {
+            display: ['"Archivo Black"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #283545;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #39FF14;
+    }
+    /* 9:16 Vertical Video Container */
+    .vertical-video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.9);
+    }
+    .vertical-video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #000;
+    }
+    /* Safe Area Padding for Mobile */
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+  </style>
+</head>
+
+<body class="bg-sport-dark text-slate-100 font-sans min-h-full flex flex-col antialiased selection:bg-sport-green selection:text-black pb-20 lg:pb-6">
+
+  <!-- NAVBAR / HEADER VIP -->
+  <header class="sticky top-0 z-40 bg-sport-surface/95 backdrop-blur-md border-b border-sport-border px-3.5 py-3 sm:px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-2.5">
+        <div class="h-9 w-9 sm:h-10 sm:w-10 rounded-xl bg-black border border-sport-green/40 flex items-center justify-center font-display font-black text-sport-green text-base sm:text-lg shadow-[0_0_15px_rgba(57,255,20,0.3)] shrink-0">
+          FP
+        </div>
+        <div class="truncate">
+          <span class="font-display text-base sm:text-xl font-black tracking-tight text-white flex items-center gap-1">
+            FUTFORCE <span class="text-sport-green">METHOD</span>
+          </span>
+          <span class="text-[9px] sm:text-[10px] text-sport-gray font-bold tracking-wider uppercase block -mt-1 truncate">
+            +162 PDF ROUTINES • EXPLANATORY VIDEOS • 4 VIP BONUSES
+          </span>
+        </div>
+      </div>
+
+      <!-- Selector de Secciones Principales (Desktop) -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        
+        <nav class="hidden md:flex items-center gap-1 bg-sport-card p-1 rounded-xl border border-sport-border text-xs font-bold">
+          <button onclick="switchMainView('videos')" id="nav-btn-videos" class="px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black flex items-center gap-1.5 transition-all">
+            <span>🎥</span> <span>Videos Explicativos</span>
+          </button>
+          <button onclick="switchMainView('fichas')" id="nav-btn-fichas" class="px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white flex items-center gap-1.5 transition-all">
+            <span>📑</span> <span>+162 PDF Routines</span>
+          </button>
+          <button onclick="switchMainView('bonos')" id="nav-btn-bonos" class="px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white flex items-center gap-1.5 transition-all">
+            <span>🎁</span> <span>4 VIP Bonuses</span>
+          </button>
+        </nav>
+
+        <!-- Progress Info (Desktop) -->
+        <div class="hidden xl:flex flex-col items-end gap-0.5 text-right pl-2 border-l border-sport-border/60">
+          <div class="flex items-center gap-1.5 text-xs font-bold text-white">
+            <span>Progress:</span>
+            <span id="progress-text" class="text-sport-green font-black">0%</span>
+            <span class="text-sport-gray text-[10px]">(<span id="completed-count">0</span>/20)</span>
+          </div>
+          <div class="w-28 h-1.5 bg-sport-border rounded-full overflow-hidden">
+            <div id="progress-bar" class="h-full bg-sport-green transition-all duration-500 rounded-full" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Botón Menú Mobile (Drawer de Lecciones) -->
+        <button 
+          onclick="toggleMobileSidebar()" 
+          class="lg:hidden p-2 rounded-xl bg-sport-card border border-sport-border text-white hover:text-sport-green flex items-center gap-1 text-xs font-bold"
+          aria-label="Abrir Lecciones"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <span class="hidden sm:inline">Lessons</span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Barra de Progreso Mobile -->
+    <div class="md:hidden mt-2 pt-2 border-t border-sport-border/60 flex items-center justify-between text-[11px] text-sport-gray">
+      <span>Video Progress: <strong id="progress-text-mobile" class="text-sport-green">0%</strong> (<span id="completed-count-mobile">0</span>/20)</span>
+      <div class="w-28 h-1.5 bg-sport-border rounded-full overflow-hidden">
+        <div id="progress-bar-mobile" class="h-full bg-sport-green transition-all duration-500 rounded-full" style="width: 0%"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 1: VIDEOS 9:16 Y FICHA TÉCNICA (VISTA PRINCIPAL DE AULAS) -->
+  <!-- ========================================================================= -->
+  <main id="view-videos" class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+    
+    <!-- COLUMNA IZQUIERDA: REPRODUCTOR VERTICAL 9:16 (5 COLS) -->
+    <section class="lg:col-span-5 flex flex-col items-center w-full">
+      
+      <div class="w-full bg-sport-surface border border-sport-border p-3 sm:p-4 rounded-3xl shadow-2xl flex flex-col items-center">
+        
+        <!-- REPRODUCTOR FORMATO 9:16 DIRECTO EN PANTALLA (YOUTUBE EMBED 100% FUNCIONAL) -->
+        <div class="vertical-video-wrapper border-2 border-sport-green/50 relative group bg-black overflow-hidden shadow-2xl">
+          <iframe 
+            id="video-frame"
+            src="https://www.youtube-nocookie.com/embed/B-28KU1j4lU?autoplay=0&playsinline=1&rel=0&modestbranding=1"
+            title="FUTFORCE Video Player"
+            class="w-full h-full absolute inset-0 border-0 rounded-2xl"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!-- CONTROLES DE NAVEGACIÓN RÁPIDA -->
+        <div class="w-full max-w-[360px] mt-3 flex items-center justify-between gap-2">
+          <button 
+            onclick="prevLesson()"
+            class="flex-1 py-2.5 px-3 rounded-xl bg-sport-card border border-sport-border hover:border-sport-green text-xs font-bold text-white flex items-center justify-center gap-1.5 transition-all active:scale-95"
+          >
+            <span>⏮ Previous</span>
+          </button>
+          <a 
+            id="btn-youtube-link"
+            href="https://www.youtube.com/watch?v=B-28KU1j4lU"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="py-2.5 px-3.5 rounded-xl bg-sport-green text-black hover:bg-emerald-400 text-xs font-black flex items-center justify-center gap-1 transition-all shadow-md active:scale-95"
+          >
+            <span>📺 Open on YouTube</span>
+          </a>
+          <button 
+            onclick="nextLesson()"
+            class="flex-1 py-2.5 px-3 rounded-xl bg-sport-card border border-sport-border hover:border-sport-green text-xs font-bold text-white flex items-center justify-center gap-1.5 transition-all active:scale-95"
+          >
+            <span>Next ⏭</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- BANNER ACCESO RÁPIDO EN MOBILE -->
+      <div class="w-full mt-4 grid grid-cols-2 gap-2.5 sm:hidden">
+        <button 
+          onclick="switchMainView('fichas')" 
+          class="p-3 rounded-2xl bg-sport-card border border-sport-border hover:border-sport-green flex flex-col items-center text-center gap-1 text-xs font-bold text-white"
+        >
+          <span class="text-xl">📑</span>
+          <span>+162 PDF Routines</span>
+          <span class="text-[10px] text-sport-green font-bold">171 Pages</span>
+        </button>
+        <button 
+          onclick="switchMainView('bonos')" 
+          class="p-3 rounded-2xl bg-sport-card border border-sport-border hover:border-sport-green flex flex-col items-center text-center gap-1 text-xs font-bold text-white"
+        >
+          <span class="text-xl">🎁</span>
+          <span>4 VIP Bonuses</span>
+          <span class="text-[10px] text-sport-green font-bold">View Guides</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- COLUMNA DERECHA: FICHA TÉCNICA + LISTA DE 20 LECCIONES (7 COLS) -->
+    <section class="lg:col-span-7 flex flex-col gap-5 w-full">
+      
+      <!-- DETALLES DE LA LECCIÓN & FICHA TÉCNICA -->
+      <div class="bg-sport-surface border border-sport-border p-4 sm:p-6 rounded-3xl shadow-xl">
+        
+        <!-- Header de la Lección Actual -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-sport-border">
+          <div>
+            <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+              <span id="badge-module" class="px-2.5 py-0.5 rounded-md bg-sport-card border border-sport-border text-[10px] sm:text-[11px] font-bold text-sport-green uppercase tracking-wider">
+                MODULE 1: UPPER BODY STRENGTH & PHYSICAL SHIELDING
+              </span>
+              <span class="px-2 py-0.5 rounded-md bg-black text-[10px] font-medium text-slate-300">
+                Formato 9:16
+              </span>
+            </div>
+            <h1 id="lesson-title" class="font-display text-base sm:text-xl font-black text-white leading-tight">
+              1. Upper Body Gym Routine for Footballers
+            </h1>
+          </div>
+
+          <!-- Botón de Conclusión -->
+          <button 
+            id="btn-complete"
+            onclick="toggleCurrentLessonCompleted()"
+            class="shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl font-display text-xs font-black uppercase tracking-wider transition-all duration-300 bg-sport-card border-2 border-sport-green text-sport-green hover:bg-sport-green hover:text-black shadow-md active:scale-95"
+          >
+            <span id="complete-icon">⭕</span>
+            <span id="complete-label">Mark as Completed</span>
+          </button>
+        </div>
+
+        <!-- Pestañas de Apoyo -->
+        <div class="mt-4">
+          <div class="flex items-center gap-2 border-b border-sport-border pb-3 mb-4 overflow-x-auto text-xs font-bold">
+            <button onclick="switchTab('ficha')" id="tab-btn-ficha" class="px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black whitespace-nowrap">
+              📋 Lesson Specs
+            </button>
+            <button onclick="switchTab('consejos')" id="tab-btn-consejos" class="px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white transition-colors whitespace-nowrap">
+              ⚠️ Common Mistakes
+            </button>
+            <button onclick="switchTab('notas')" id="tab-btn-notas" class="px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white transition-colors whitespace-nowrap">
+              📝 My Workout Weights
+            </button>
+          </div>
+
+          <!-- TAB 1: FICHA TÉCNICA -->
+          <div id="tab-ficha" class="space-y-4 text-xs sm:text-sm text-slate-300">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <div class="bg-sport-card p-3 rounded-xl border border-sport-border">
+                <span class="text-[10px] text-sport-gray uppercase block font-bold">Sets</span>
+                <span id="tech-series" class="text-sm sm:text-base font-black text-white">4 Sets</span>
+              </div>
+              <div class="bg-sport-card p-3 rounded-xl border border-sport-border">
+                <span class="text-[10px] text-sport-gray uppercase block font-bold">Reps</span>
+                <span id="tech-reps" class="text-sm sm:text-base font-black text-sport-green">8 - 10 reps</span>
+              </div>
+              <div class="bg-sport-card p-3 rounded-xl border border-sport-border">
+                <span class="text-[10px] text-sport-gray uppercase block font-bold">Rest</span>
+                <span id="tech-rest" class="text-sm sm:text-base font-black text-white">90 sec</span>
+              </div>
+              <div class="bg-sport-card p-3 rounded-xl border border-sport-border">
+                <span class="text-[10px] text-sport-gray uppercase block font-bold">Goal</span>
+                <span id="tech-goal" class="text-xs sm:text-sm font-black text-white truncate">Upper Body Power & Shielding</span>
+              </div>
+            </div>
+
+            <div class="bg-sport-card p-3.5 rounded-xl border border-sport-border space-y-1.5">
+              <h4 class="font-display font-black text-white text-xs sm:text-sm">💡 Key Execution Cues:</h4>
+              <p id="tech-desc" class="text-slate-300 leading-relaxed text-xs sm:text-sm">
+                Targeted upper body push and pull exercises to build upper torso mass and shoulder stability without losing agility on the pitch.
+              </p>
+            </div>
+          </div>
+
+          <!-- TAB 2: ERRORES FRECUENTES -->
+          <div id="tab-consejos" class="hidden space-y-3 text-xs sm:text-sm">
+            <div class="bg-red-500/10 border border-red-500/30 p-3.5 rounded-xl text-red-200">
+              <h4 class="font-bold mb-1 flex items-center gap-1.5">
+                <span>❌</span> <span>What you must NEVER do:</span>
+              </h4>
+              <ul id="tech-mistakes" class="list-disc list-inside space-y-1 text-slate-300">
+                <li>Do not arch your lower back when pressing.</li>
+                <li>Control the eccentric lowering phase to protect your shoulders.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- TAB 3: NOTAS DE PESO / CARGAS -->
+          <div id="tab-notas" class="hidden space-y-3">
+            <label class="block text-xs text-sport-gray font-bold uppercase">
+              Record your weights, reps, and feedback for this exercise:
+            </label>
+            <textarea 
+              id="user-notes" 
+              rows="3" 
+              placeholder="E.g., Hit 45kg today with maximum first-step power..."
+              class="w-full p-3 rounded-xl bg-sport-card border border-sport-border text-white text-xs sm:text-sm focus:border-sport-green focus:outline-none resize-none"
+              oninput="saveUserNotes()"
+            ></textarea>
+            <span id="notes-saved-msg" class="text-[11px] text-sport-green font-bold hidden">✓ Saved automatically</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LISTA DE 20 LECCIONES ORGANIZADAS POR MÓDULOS -->
+      <aside id="sidebar-lessons" class="bg-sport-surface border border-sport-border rounded-3xl p-4 sm:p-5 flex flex-col shadow-xl">
+        <div class="flex items-center justify-between pb-3 border-b border-sport-border mb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-sport-green text-base">⚡</span>
+            <h2 class="font-display text-xs sm:text-sm font-black text-white uppercase tracking-wider">
+              Explanatory Training Videos
+            </h2>
+          </div>
+          <span class="text-[11px] text-sport-gray font-bold bg-sport-card px-2 py-0.5 rounded-md border border-sport-border">
+            5 Modules
+          </span>
+        </div>
+
+        <div id="modules-list" class="space-y-3 overflow-y-auto max-h-[480px] pr-1">
+          <!-- Renderizado dinámicamente -->
+        </div>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 2: BIBLIOTECA OFICIAL: +162 RUTINAS DE GIMNASIO Y FUNCIONAL (PDF) -->
+  <!-- ========================================================================= -->
+  <main id="view-fichas" class="hidden flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 space-y-6">
+    
+    <!-- Hero Banner do Ebook Principal -->
+    <div class="bg-gradient-to-r from-sport-surface via-sport-card to-sport-surface border border-sport-green/30 rounded-3xl p-5 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-sport-green/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="max-w-3xl space-y-3">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="px-3 py-1 rounded-full bg-sport-green/20 border border-sport-green/50 text-[11px] font-black text-sport-green uppercase tracking-widest">
+            SOCCER PHYSICAL PREPARATION
+          </span>
+          <span class="px-2.5 py-1 rounded-full bg-black text-[11px] font-bold text-slate-300">
+            171 Pages • 162 Routines
+          </span>
+        </div>
+        <h2 class="font-display text-xl sm:text-3xl font-black text-white">
+          +162 Gym & Functional Routines for Footballers
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          Build explosive first-step speed, duel-winning strength, match endurance, and upper-body shielding with gym and functional routines scientifically designed to dominate on the pitch.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-3">
+          <button 
+            onclick="downloadPDF('+162 Rutinas de Gimnasio y Funcional para Futbolistas (Libro Completo - 171 Págs)')"
+            class="px-5 py-3 rounded-xl bg-sport-green hover:bg-emerald-400 text-black font-display font-black text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg hover:scale-105 active:scale-95 inline-flex items-center gap-2"
+          >
+            <span>📥</span>
+            <span>DOWNLOAD FULL MASTER BOOK (+162 ROUTINES PDF)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLA DE PLAN SEMANAL SUGERIDO (OFICIAL DEL PDF) -->
+    <div class="bg-sport-surface border border-sport-border p-5 sm:p-6 rounded-3xl shadow-xl space-y-4">
+      <div class="flex items-center justify-between border-b border-sport-border pb-3">
+        <div class="flex items-center gap-2">
+          <span class="text-sport-green text-lg">📅</span>
+          <h3 class="font-display text-sm sm:text-base font-black text-white uppercase tracking-wider">
+            Suggested Weekly Training Split (Optimal Distribution)
+          </h3>
+        </div>
+        <span class="text-[11px] text-sport-gray font-bold bg-sport-card px-2.5 py-1 rounded-md border border-sport-border">
+          Amateur / Semi-Pro Football
+        </span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+          <thead>
+            <tr class="bg-sport-card text-sport-gray text-[11px] uppercase font-black tracking-wider border-b border-sport-border">
+              <th class="p-3">Day</th>
+              <th class="p-3">Training Focus / Quality</th>
+              <th class="p-3">Suggested Workout Split</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-sport-border/60 text-slate-300">
+            <tr class="hover:bg-white/5">
+              <td class="p-3 font-bold text-white">Monday</td>
+              <td class="p-3 text-sport-green font-bold">Explosive Strength</td>
+              <td class="p-3">Gym strength routine + core (10 min)</td>
+            </tr>
+            <tr class="hover:bg-white/5">
+              <td class="p-3 font-bold text-white">Tuesday</td>
+              <td class="p-3 text-cyan-400 font-bold">Speed & Agility</td>
+              <td class="p-3">Functional sprint drills + hip mobility</td>
+            </tr>
+            <tr class="hover:bg-white/5">
+              <td class="p-3 font-bold text-white">Wednesday</td>
+              <td class="p-3 text-yellow-400 font-bold">Aerobic Flush (Light) or Active Rest</td>
+              <td class="p-3">Basic mobility circuit or recovery flush</td>
+            </tr>
+            <tr class="hover:bg-white/5">
+              <td class="p-3 font-bold text-white">Thursday</td>
+              <td class="p-3 text-purple-400 font-bold">Explosive Power</td>
+              <td class="p-3">Gym power routine or plyometric session</td>
+            </tr>
+            <tr class="hover:bg-white/5">
+              <td class="p-3 font-bold text-white">Friday</td>
+              <td class="p-3 text-orange-400 font-bold">Speed & Core Primer</td>
+              <td class="p-3">Short, high-intensity primer before matchday</td>
+            </tr>
+            <tr class="hover:bg-white/5 bg-sport-green/5">
+              <td class="p-3 font-bold text-sport-green">Saturday / Sunday</td>
+              <td class="p-3 font-bold text-white">Match Day or Full Recovery</td>
+              <td class="p-3">Post-match stretching and active tissue recovery</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- LOS 5 BLOQUES OFICIALES DE ENTRENAMIENTO -->
+    <div class="space-y-4">
+      <h3 class="font-display text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
+        <span>🏋️</span> <span>The 5 Training Blocks (Download Separately or Full Book):</span>
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        
+        <!-- BLOQUE 1: FUERZA EXPLOSIVA -->
+        <div class="bg-sport-surface border border-red-500/30 hover:border-red-500/70 p-5 rounded-2xl flex flex-col justify-between transition-all group shadow-lg">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🔴</span>
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/40">36 ROUTINES</span>
+            </div>
+            <h4 class="font-display font-black text-white text-base group-hover:text-red-400 transition-colors">
+              Block 1: Explosive Strength
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Develop peak force production in the shortest amount of time. The foundation to dominate physical duels and shield defenders.
+            </p>
+            <div class="text-[11px] text-sport-gray space-y-1 bg-sport-card p-2.5 rounded-lg border border-sport-border">
+              <div>• Gimnasio (Básico #1-6, Intermedio #7-12, Avanzado #13-18)</div>
+              <div>• Funcional (Básico #19-24, Intermedio #25-30, Avanzado #31-36)</div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+            <span class="text-[11px] text-sport-gray font-bold">PDF • 38 Páginas</span>
+            <button 
+              onclick="downloadPDF('Bloque 1: Fuerza Explosiva (36 Rutinas)')"
+              class="px-3 py-1.5 rounded-lg bg-sport-card hover:bg-red-500 hover:text-white text-white text-xs font-black border border-sport-border transition-all"
+            >
+              Download Block 1
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOQUE 2: VELOCIDAD -->
+        <div class="bg-sport-surface border border-cyan-500/30 hover:border-cyan-500/70 p-5 rounded-2xl flex flex-col justify-between transition-all group shadow-lg">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🔵</span>
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/40">36 ROUTINES</span>
+            </div>
+            <h4 class="font-display font-black text-white text-base group-hover:text-cyan-400 transition-colors">
+              Block 2: Speed
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Sharpen first-step acceleration (0-20m), top-end sprint speed (20-40m), and sharp deceleration to win loose balls.
+            </p>
+            <div class="text-[11px] text-sport-gray space-y-1 bg-sport-card p-2.5 rounded-lg border border-sport-border">
+              <div>• Gimnasio (Básico #37-42, Intermedio #43-48, Avanzado #49-54)</div>
+              <div>• Funcional (Básico #55-60, Intermedio #61-66, Avanzado #67-72)</div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+            <span class="text-[11px] text-sport-gray font-bold">PDF • 38 Páginas</span>
+            <button 
+              onclick="downloadPDF('Bloque 2: Velocidad (36 Rutinas)')"
+              class="px-3 py-1.5 rounded-lg bg-sport-card hover:bg-cyan-500 hover:text-black text-white text-xs font-black border border-sport-border transition-all"
+            >
+              Download Block 2
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOQUE 3: RESISTENCIA -->
+        <div class="bg-sport-surface border border-emerald-500/30 hover:border-emerald-500/70 p-5 rounded-2xl flex flex-col justify-between transition-all group shadow-lg">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🟢</span>
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">36 ROUTINES</span>
+            </div>
+            <h4 class="font-display font-black text-white text-base group-hover:text-emerald-400 transition-colors">
+              Block 3: Match Stamina
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Build an aerobic engine capable of repeating high-intensity sprints for 90 minutes without dropping technical precision.
+            </p>
+            <div class="text-[11px] text-sport-gray space-y-1 bg-sport-card p-2.5 rounded-lg border border-sport-border">
+              <div>• Gimnasio (Básico #73-78, Intermedio #79-84, Avanzado #85-90)</div>
+              <div>• Funcional (Básico #91-96, Intermedio #97-102, Avanzado #103-108)</div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+            <span class="text-[11px] text-sport-gray font-bold">PDF • 38 Páginas</span>
+            <button 
+              onclick="downloadPDF('Bloque 3: Resistencia (36 Rutinas)')"
+              class="px-3 py-1.5 rounded-lg bg-sport-card hover:bg-emerald-500 hover:text-black text-white text-xs font-black border border-sport-border transition-all"
+            >
+              Download Block 3
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOQUE 4: POTENCIA -->
+        <div class="bg-sport-surface border border-purple-500/30 hover:border-purple-500/70 p-5 rounded-2xl flex flex-col justify-between transition-all group shadow-lg">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🟣</span>
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/40">36 ROUTINES</span>
+            </div>
+            <h4 class="font-display font-black text-white text-base group-hover:text-purple-400 transition-colors">
+              Block 4: Explosive Power
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Fuse strength and velocity to jump higher, strike balls harder, and explode into open space with violent acceleration.
+            </p>
+            <div class="text-[11px] text-sport-gray space-y-1 bg-sport-card p-2.5 rounded-lg border border-sport-border">
+              <div>• Gimnasio (Básico #109-114, Intermedio #115-120, Avanzado #121-126)</div>
+              <div>• Funcional (Básico #127-132, Intermedio #133-138, Avanzado #139-144)</div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+            <span class="text-[11px] text-sport-gray font-bold">PDF • 38 Páginas</span>
+            <button 
+              onclick="downloadPDF('Bloque 4: Potencia (36 Rutinas)')"
+              class="px-3 py-1.5 rounded-lg bg-sport-card hover:bg-purple-500 hover:text-white text-white text-xs font-black border border-sport-border transition-all"
+            >
+              Download Block 4
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOQUE 5: CORE Y PREVENCIÓN DE LESIONES -->
+        <div class="bg-sport-surface border border-teal-500/30 hover:border-teal-500/70 p-5 rounded-2xl flex flex-col justify-between transition-all group shadow-lg">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🛡️</span>
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded bg-teal-500/20 text-teal-400 border border-teal-500/40">18 ROUTINES</span>
+            </div>
+            <h4 class="font-display font-black text-white text-base group-hover:text-teal-400 transition-colors">
+              Block 5: Core & Injury Bulletproofing
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Reinforce the pelvic core and safeguard the most vulnerable football areas: hamstrings, groin adductors, knees, and ankles.
+            </p>
+            <div class="text-[11px] text-sport-gray space-y-1 bg-sport-card p-2.5 rounded-lg border border-sport-border">
+              <div>• Funcional (Básico #145-150, Intermedio #151-156, Avanzado #157-162)</div>
+              <div>• Nordic hamstring curls, copenhagen plank, pallof press</div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+            <span class="text-[11px] text-sport-gray font-bold">PDF • 20 Páginas</span>
+            <button 
+              onclick="downloadPDF('Bloque 5: Core y Prevención de Lesiones (18 Rutinas)')"
+              class="px-3 py-1.5 rounded-lg bg-sport-card hover:bg-teal-500 hover:text-black text-white text-xs font-black border border-sport-border transition-all"
+            >
+              Download Block 5
+            </button>
+          </div>
+        </div>
+
+        <!-- SEGUIMIENTO Y PROGRESIÓN -->
+        <div class="bg-sport-surface border border-sport-green/30 hover:border-sport-green/70 p-5 rounded-2xl flex flex-col justify-between transition-all group shadow-lg">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">📊</span>
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded bg-sport-green/20 text-sport-green border border-sport-green/40">TEMPLATE</span>
+            </div>
+            <h4 class="font-display font-black text-white text-base group-hover:text-sport-green transition-colors">
+              Progress & RPE Tracking Sheets
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Printable log sheet to record workout date, loads lifted, reps, and rate of perceived exertion (RPE 1-10 scale).
+            </p>
+            <div class="text-[11px] text-sport-gray space-y-1 bg-sport-card p-2.5 rounded-lg border border-sport-border">
+              <div>• Registro semanal de constancia y cargas</div>
+              <div>• Control de fatiga para evitar sobreentrenamiento</div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+            <span class="text-[11px] text-sport-gray font-bold">PDF Imprimible</span>
+            <button 
+              onclick="downloadPDF('Plantilla de Seguimiento y Progresión RPE')"
+              class="px-3 py-1.5 rounded-lg bg-sport-card hover:bg-sport-green hover:text-black text-white text-xs font-black border border-sport-border transition-all"
+            >
+              Download Template
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 3: LOS 4 BONOS EXCLUSIVOS OFICIALES (EN ESPAÑOL) -->
+  <!-- ========================================================================= -->
+  <main id="view-bonos" class="hidden flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 space-y-6">
+    
+    <!-- Hero Banner de Bonos -->
+    <div class="bg-gradient-to-r from-sport-surface via-sport-card to-sport-surface border border-sport-green/30 rounded-3xl p-5 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div class="max-w-3xl space-y-3">
+        <span class="px-3 py-1 rounded-full bg-sport-green/20 border border-sport-green/50 text-xs font-black text-sport-green uppercase tracking-widest inline-block">
+          🎁 4 EXCLUSIVE VIP BONUSES INCLUDED
+        </span>
+        <h2 class="font-display text-xl sm:text-3xl font-black text-white">
+          Official High-Performance <span class="text-sport-green">Master Guides</span>
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          Instant access to all 4 official companion guides: Mobility for Footballers, Sports Nutrition, Injury Prevention Protocol, and Evidence-Based Supplement Guide.
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid de los 4 Bonos Oficiales -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+      
+      <!-- BONO #1: MOVILIDAD PARA FUTBOLISTAS -->
+      <div class="bg-sport-surface border border-sport-border hover:border-sport-green/60 p-5 sm:p-6 rounded-3xl flex flex-col justify-between transition-all group shadow-xl">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl">🤸</span>
+            <span class="text-[10px] font-black px-2.5 py-1 rounded-full bg-sport-green/20 text-sport-green border border-sport-green/40">BONO #1 • 15 PÁGS</span>
+          </div>
+          <h3 class="font-display font-black text-white text-lg group-hover:text-sport-green transition-colors">
+            Movilidad para Futbolistas
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Rutinas guiadas de movilidad articular para ganar rango de movimiento, reducir el riesgo de lesión y moverte más libre dentro de la cancha.
+          </p>
+          <div class="bg-sport-card p-3 rounded-xl border border-sport-border text-xs text-sport-gray space-y-1">
+            <div>✓ 5 Zonas: Tobillo, Cadera, Rodilla/Cadena Posterior, Columna/Core, Hombro</div>
+            <div>✓ Rutina pre-entrenamiento (dinámica 8-10m), post (estática 6-8m) y día libre (12-15m)</div>
+            <div>✓ Movimientos: 90/90 hip switch, dorsiflexión en pared, gato-camello, bisagra</div>
+          </div>
+        </div>
+        <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+          <span class="text-xs text-sport-gray font-bold">Manual PDF • 15 Páginas</span>
+          <button 
+            onclick="downloadPDF('Bonus #1: Mobility for Footballers (15 Páginas)')"
+            class="px-4 py-2 rounded-xl bg-sport-green hover:bg-emerald-400 text-black font-black text-xs transition-all shadow-md active:scale-95"
+          >
+            📥 Download Bonus #1
+          </button>
+        </div>
+      </div>
+
+      <!-- BONO #2: GUÍA DE NUTRICIÓN DEPORTIVA -->
+      <div class="bg-sport-surface border border-sport-border hover:border-sport-green/60 p-5 sm:p-6 rounded-3xl flex flex-col justify-between transition-all group shadow-xl">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl">🥗</span>
+            <span class="text-[10px] font-black px-2.5 py-1 rounded-full bg-sport-green/20 text-sport-green border border-sport-green/40">BONO #2 • 14 PÁGS</span>
+          </div>
+          <h3 class="font-display font-black text-white text-lg group-hover:text-sport-green transition-colors">
+            Guía de Nutrición Deportiva
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Qué comer, cuándo y por qué: la estrategia nutricional para entrenar más fuerte, rendir en cada partido y recuperarte más rápido.
+          </p>
+          <div class="bg-sport-card p-3 rounded-xl border border-sport-border text-xs text-sport-gray space-y-1">
+            <div>✓ Macronutrientes exactos: Carbohidratos (5-8g/kg), Proteínas (1.6-2.2g/kg), Grasas (1-1.5g/kg)</div>
+            <div>✓ Timing: 3-4h antes, 1-2h antes, durante el partido (30-60g carbohidratos/hora) y post-partido</div>
+            <div>✓ Plan de comidas completo para días de entrenamiento y días de partido</div>
+          </div>
+        </div>
+        <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+          <span class="text-xs text-sport-gray font-bold">Manual PDF • 14 Páginas</span>
+          <button 
+            onclick="downloadPDF('Bonus #2: Sports Nutrition Guide for Footballers (14 Páginas)')"
+            class="px-4 py-2 rounded-xl bg-sport-green hover:bg-emerald-400 text-black font-black text-xs transition-all shadow-md active:scale-95"
+          >
+            📥 Download Bonus #2
+          </button>
+        </div>
+      </div>
+
+      <!-- BONO #3: PROTOCOLO ANTI-LESIONES -->
+      <div class="bg-sport-surface border border-sport-border hover:border-sport-green/60 p-5 sm:p-6 rounded-3xl flex flex-col justify-between transition-all group shadow-xl">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl">🛡️</span>
+            <span class="text-[10px] font-black px-2.5 py-1 rounded-full bg-sport-green/20 text-sport-green border border-sport-green/40">BONO #3 • 14 PÁGS</span>
+          </div>
+          <h3 class="font-display font-black text-white text-lg group-hover:text-sport-green transition-colors">
+            Protocolo Anti-Lesiones
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Un protocolo de calentamiento y fuerza preventiva, basado en principios validados científicamente, para reducir el riesgo de las lesiones más comunes del fútbol.
+          </p>
+          <div class="bg-sport-card p-3 rounded-xl border border-sport-border text-xs text-sport-gray space-y-1">
+            <div>✓ Calentamiento estructurado en 3 partes: Carrera (Parte 1), Fuerza/Equilibrio (Parte 2), Velocidad (Parte 3)</div>
+            <div>✓ Prevención específica de isquiotibiales (Nordic curl 2x semana), tobillo, rodilla/LCA y aductores</div>
+            <div>✓ Gestión de carga con escala RPE y señales de alarma</div>
+          </div>
+        </div>
+        <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+          <span class="text-xs text-sport-gray font-bold">Manual PDF • 14 Páginas</span>
+          <button 
+            onclick="downloadPDF('Bonus #3: Injury Prevention Protocol (14 Páginas)')"
+            class="px-4 py-2 rounded-xl bg-sport-green hover:bg-emerald-400 text-black font-black text-xs transition-all shadow-md active:scale-95"
+          >
+            📥 Download Bonus #3
+          </button>
+        </div>
+      </div>
+
+      <!-- BONO #4: GUÍA DE SUPLEMENTACIÓN -->
+      <div class="bg-sport-surface border border-sport-border hover:border-sport-green/60 p-5 sm:p-6 rounded-3xl flex flex-col justify-between transition-all group shadow-xl">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl">💊</span>
+            <span class="text-[10px] font-black px-2.5 py-1 rounded-full bg-sport-green/20 text-sport-green border border-sport-green/40">BONO #4 • 14 PÁGS</span>
+          </div>
+          <h3 class="font-display font-black text-white text-lg group-hover:text-sport-green transition-colors">
+            Guía de Suplementación
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Qué suplementos tienen evidencia real para un futbolista, cómo usarlos con seguridad y qué evitar para cuidar tu salud y tu carrera.
+          </p>
+          <div class="bg-sport-card p-3 rounded-xl border border-sport-border text-xs text-sport-gray space-y-1">
+            <div>✓ Suplementos clase A: Creatina monohidrato (3-5g/día), Cafeína (3-6mg/kg), Proteína, Beta-alanina</div>
+            <div>✓ Electrolitos, Omega-3 y Vitamina D para rendimiento continuo</div>
+            <div>✓ Riesgo de dopaje, sellos certificados (Informed Sport) y qué suplementos NO comprar</div>
+          </div>
+        </div>
+        <div class="pt-4 mt-4 border-t border-sport-border flex items-center justify-between">
+          <span class="text-xs text-sport-gray font-bold">Manual PDF • 14 Páginas</span>
+          <button 
+            onclick="downloadPDF('Bonus #4: Supplement Guide for Footballers (14 Páginas)')"
+            class="px-4 py-2 rounded-xl bg-sport-green hover:bg-emerald-400 text-black font-black text-xs transition-all shadow-md active:scale-95"
+          >
+            📥 Download Bonus #4
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- BOTTOM NAVIGATION BAR FOR MOBILE (1-THUMB NAVIGATION) -->
+  <!-- ========================================================================= -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 bg-sport-surface/98 backdrop-blur-lg border-t border-sport-border z-40 px-2 py-2 flex items-center justify-around pb-safe">
+    <button onclick="switchMainView('videos')" id="mob-nav-videos" class="flex flex-col items-center gap-0.5 text-sport-green font-black text-[10px]">
+      <span class="text-lg">🎥</span>
+      <span>Videos</span>
+    </button>
+    <button onclick="switchMainView('fichas')" id="mob-nav-fichas" class="flex flex-col items-center gap-0.5 text-sport-gray font-bold text-[10px]">
+      <span class="text-lg">📑</span>
+      <span>+162 PDFs</span>
+    </button>
+    <button onclick="switchMainView('bonos')" id="mob-nav-bonos" class="flex flex-col items-center gap-0.5 text-sport-gray font-bold text-[10px]">
+      <span class="text-lg">🎁</span>
+      <span>4 Bonos</span>
+    </button>
+    <button onclick="toggleMobileSidebar()" class="flex flex-col items-center gap-0.5 text-sport-gray font-bold text-[10px]">
+      <span class="text-lg">📋</span>
+      <span>Playlist</span>
+    </button>
+  </nav>
+
+  <!-- MODAL / DRAWER MOBILE OVERLAY -->
+  <div id="mobile-overlay" onclick="toggleMobileSidebar()" class="hidden fixed inset-0 bg-black/80 z-40 lg:hidden backdrop-blur-sm"></div>
+
+  <!-- NOTIFICACIÓN TOAST DE DESCARGA -->
+  <div id="download-toast" class="fixed top-5 right-5 z-50 bg-sport-green text-black px-4 py-3 rounded-2xl font-display font-black text-xs shadow-2xl flex items-center gap-2 transform translate-y-[-100px] transition-transform duration-300">
+    <span>📥</span>
+    <span id="toast-text">Descargando archivo...</span>
+  </div>
+
+  <!-- JAVASCRIPT: GESTIÓN DE AULAS, FICHAS Y BONOS -->
+  <script>
+    // 20 LECCIONES CON LOS VIDEOS MP4 NATIVOS 9:16 E POSTERS EM HD
+    const courseData = [
+      {
+            "id": 1,
+            "moduleId": 1,
+            "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
+            "title": "1. Upper Body Gym Routine for Footballers",
+            "youtubeId": "B-28KU1j4lU",
+            "videoFile": "videos/video_1.mp4",
+            "poster": "https://i.ytimg.com/vi/B-28KU1j4lU/hqdefault.jpg",
+            "duration": "5:08 min",
+            "level": "All Levels",
+            "series": "4 Sets",
+            "reps": "8 - 10 reps",
+            "rest": "90 sec",
+            "goal": "Upper Body Power & Match Shielding",
+            "desc": "Targeted upper body push and pull exercises to build upper torso mass and shoulder stability without losing agility on the pitch.",
+            "mistakes": [
+                  "Do not arch your lower back when pressing.",
+                  "Control the eccentric lowering phase to protect your shoulders."
+            ]
+      },
+      {
+            "id": 2,
+            "moduleId": 1,
+            "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
+            "title": "2. Full Upper Body Workout for Soccer Players",
+            "youtubeId": "AzYITycrPFs",
+            "videoFile": "videos/video_2.mp4",
+            "poster": "https://i.ytimg.com/vi/AzYITycrPFs/hqdefault.jpg",
+            "duration": "9:34 min",
+            "level": "Intermediate",
+            "series": "3 - 4 Sets",
+            "reps": "8 - 10 reps",
+            "rest": "75 sec",
+            "goal": "Upper Body Hypertrophy & Stability",
+            "desc": "Comprehensive follow-along upper body routine designed to develop lean athletic muscle and torso rigidity in 1v1 collisions.",
+            "mistakes": [
+                  "Avoid swinging weights with momentum.",
+                  "Keep your ribcage down and core locked."
+            ]
+      },
+      {
+            "id": 3,
+            "moduleId": 1,
+            "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
+            "title": "3. 15 Best Upper Body Strength Exercises for Footballers",
+            "youtubeId": "qKhzRqpN21Y",
+            "videoFile": "videos/video_3.mp4",
+            "poster": "https://i.ytimg.com/vi/qKhzRqpN21Y/hqdefault.jpg",
+            "duration": "4:30 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "10 reps",
+            "rest": "60 sec",
+            "goal": "Functional Football Muscle",
+            "desc": "Top compound movements that translate directly to on-pitch physical duels, aerial contests, and shielding off defenders.",
+            "mistakes": [
+                  "Do not shrug your shoulders towards your ears.",
+                  "Focus on smooth scapular retraction."
+            ]
+      },
+      {
+            "id": 4,
+            "moduleId": 1,
+            "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
+            "title": "4. Centre-Back & Physical Duel Power Workout",
+            "youtubeId": "FtK_PNWfkjo",
+            "videoFile": "videos/video_4.mp4",
+            "poster": "https://i.ytimg.com/vi/FtK_PNWfkjo/hqdefault.jpg",
+            "duration": "8:10 min",
+            "level": "Intermediate - Advanced",
+            "series": "4 Sets",
+            "reps": "6 - 8 reps",
+            "rest": "90 sec",
+            "goal": "Aggressive Shielding & Duel Dominance",
+            "desc": "High-intensity follow-along session modeled after top elite defenders to increase chest, arm, and back bracing strength.",
+            "mistakes": [
+                  "Never sacrifice posture for heavier dumbbell loads.",
+                  "Maintain active foot contact throughout."
+            ]
+      },
+      {
+            "id": 5,
+            "moduleId": 2,
+            "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
+            "title": "5. Unilateral Plyometrics Training for Footballers",
+            "youtubeId": "zEhkbjkMWJQ",
+            "videoFile": "videos/video_5.mp4",
+            "poster": "https://i.ytimg.com/vi/zEhkbjkMWJQ/hqdefault.jpg",
+            "duration": "7:32 min",
+            "level": "All Levels",
+            "series": "4 Sets",
+            "reps": "5 jumps per leg",
+            "rest": "90 sec",
+            "goal": "Single-Leg Takeoff & Elastic Power",
+            "desc": "Unilateral bounding, box step-offs, and lateral hops to build explosive single-leg drive for aerial headers and fast turns.",
+            "mistakes": [
+                  "Never land with stiff or locked knees.",
+                  "Absorb shock softly through the midfoot."
+            ]
+      },
+      {
+            "id": 6,
+            "moduleId": 2,
+            "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
+            "title": "6. Explosive Lower Body Jump Workout",
+            "youtubeId": "A9zxzfxdw30",
+            "videoFile": "videos/video_6.mp4",
+            "poster": "https://i.ytimg.com/vi/A9zxzfxdw30/hqdefault.jpg",
+            "duration": "10:19 min",
+            "level": "Intermediate",
+            "series": "4 Sets",
+            "reps": "6 maximal jumps",
+            "rest": "90 sec",
+            "goal": "Header Elevation & Vertical Clearance",
+            "desc": "Progressive plyometric routine to rapidly recruit fast-twitch muscle fibers for higher aerial duels and jumping power.",
+            "mistakes": [
+                  "Do not collapse knees inward upon landing.",
+                  "Reset fully before each maximal attempt."
+            ]
+      },
+      {
+            "id": 7,
+            "moduleId": 2,
+            "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
+            "title": "7. Full Plyometrics & Core Workout for Footballers",
+            "youtubeId": "7N-yqiDS_2s",
+            "videoFile": "videos/video_7.mp4",
+            "poster": "https://i.ytimg.com/vi/7N-yqiDS_2s/hqdefault.jpg",
+            "duration": "4:17 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "8 rapid reps",
+            "rest": "60 sec",
+            "goal": "Stiffness & Ground Contact Time",
+            "desc": "Reactive hops paired with core bracing to convert your legs into powerful springs and minimize ground contact time.",
+            "mistakes": [
+                  "Do not spend long time on the ground between bounds.",
+                  "Drive your arms forcefully on every leap."
+            ]
+      },
+      {
+            "id": 8,
+            "moduleId": 2,
+            "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
+            "title": "8. 10-Minute Explosive Speed & Power Jump Session",
+            "youtubeId": "DOymvQX3voI",
+            "videoFile": "videos/video_8.mp4",
+            "poster": "https://i.ytimg.com/vi/DOymvQX3voI/hqdefault.jpg",
+            "duration": "11:24 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "6 - 8 reps",
+            "rest": "75 sec",
+            "goal": "Deceleration & Explosive Re-acceleration",
+            "desc": "Dynamic jump-to-sprint and change-of-direction mechanics to burst past opponents in the first 5 to 10 yards.",
+            "mistakes": [
+                  "Do not round your spine on the landing catch.",
+                  "Control your momentum before exploding forward."
+            ]
+      },
+      {
+            "id": 9,
+            "moduleId": 3,
+            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
+            "title": "9. Top 10 Gym Exercises for Explosive Footballers",
+            "youtubeId": "ZeNqdvWNbcE",
+            "videoFile": "videos/video_9.mp4",
+            "poster": "https://i.ytimg.com/vi/ZeNqdvWNbcE/hqdefault.jpg",
+            "duration": "5:16 min",
+            "level": "All Levels",
+            "series": "4 Sets",
+            "reps": "6 - 8 reps",
+            "rest": "90 sec",
+            "goal": "Maximal Force Production in the Gym",
+            "desc": "The definitive gym movements every footballer needs: trap bar deadlifts, split squats, hip thrusts, and power cleans.",
+            "mistakes": [
+                  "Do not lift with a rounded spine.",
+                  "Prioritize barbell speed over grinding heavy weight."
+            ]
+      },
+      {
+            "id": 10,
+            "moduleId": 3,
+            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
+            "title": "10. French Contrast Training for First-Step Speed",
+            "youtubeId": "SbuOvHcGm-E",
+            "videoFile": "videos/video_10.mp4",
+            "poster": "https://i.ytimg.com/vi/SbuOvHcGm-E/hqdefault.jpg",
+            "duration": "12:19 min",
+            "level": "Advanced",
+            "series": "3 - 4 Rounds",
+            "reps": "Complex Split",
+            "rest": "120 sec",
+            "goal": "Sprint Acceleration & Rate of Force",
+            "desc": "Combine heavy strength with unweighted plyometrics to trigger potentiation and unlock explosive breakaway speed.",
+            "mistakes": [
+                  "Do not rush between the contrast pairs.",
+                  "Maintain 100% intent and velocity on every rep."
+            ]
+      },
+      {
+            "id": 11,
+            "moduleId": 3,
+            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
+            "title": "11. Leg Workout to Improve Explosiveness & Sprint Speed",
+            "youtubeId": "qMIO4rs3qH4",
+            "videoFile": "videos/video_11.mp4",
+            "poster": "https://i.ytimg.com/vi/qMIO4rs3qH4/hqdefault.jpg",
+            "duration": "12:37 min",
+            "level": "Intermediate",
+            "series": "4 Sets",
+            "reps": "6 reps per leg",
+            "rest": "90 sec",
+            "goal": "Single-Leg Sprint Stride & Hip Extension",
+            "desc": "Targeted gym session focusing on glutes, hamstrings, and calves for explosive stride drive and sprinting power.",
+            "mistakes": [
+                  "Avoid forward knee cave on Bulgarian split squats.",
+                  "Keep torso proud and upright."
+            ]
+      },
+      {
+            "id": 12,
+            "moduleId": 3,
+            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
+            "title": "12. Fast-Twitch Muscle Building for Football Athletes",
+            "youtubeId": "_vt3SiJLnW4",
+            "videoFile": "videos/video_12.mp4",
+            "poster": "https://i.ytimg.com/vi/_vt3SiJLnW4/hqdefault.jpg",
+            "duration": "13:38 min",
+            "level": "All Levels",
+            "series": "4 Sets",
+            "reps": "5 - 6 reps",
+            "rest": "90 sec",
+            "goal": "Neuromuscular Speed & Ball Strike Power",
+            "desc": "Scientific methods to train the nervous system and build fast-twitch fibers for harder shooting and lightning bursts.",
+            "mistakes": [
+                  "Stop the set once bar speed drops significantly.",
+                  "Do not train to complete muscle failure here."
+            ]
+      },
+      {
+            "id": 13,
+            "moduleId": 4,
+            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
+            "title": "13. Core & Upper Body Functional Strength for Match Play",
+            "youtubeId": "PasHkO5RPxQ",
+            "videoFile": "videos/video_13.mp4",
+            "poster": "https://i.ytimg.com/vi/PasHkO5RPxQ/hqdefault.jpg",
+            "duration": "9:06 min",
+            "level": "All Levels",
+            "series": "4 Sets",
+            "reps": "10 reps",
+            "rest": "60 sec",
+            "goal": "Anti-Rotation & Pelvic Rigidity",
+            "desc": "Rotational and anti-lateral flexion core exercises to resist shoulder pushes, hold off defenders, and stabilize the pelvis.",
+            "mistakes": [
+                  "Do not let hips sag during plank variations.",
+                  "Breathe steadily while bracing the midsection."
+            ]
+      },
+      {
+            "id": 14,
+            "moduleId": 4,
+            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
+            "title": "14. Weight Lifting: Complete Guide to Lifting Weights for Football",
+            "youtubeId": "E8hFE8FHzTA",
+            "videoFile": "videos/video_14.mp4",
+            "poster": "https://i.ytimg.com/vi/E8hFE8FHzTA/hqdefault.jpg",
+            "duration": "13:57 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "8 - 10 reps",
+            "rest": "75 sec",
+            "goal": "Injury-Free Strength Periodization",
+            "desc": "A practical breakdown of how to structure gym lifts around team training sessions without accumulating leg soreness.",
+            "mistakes": [
+                  "Do not squat heavy the day before a match.",
+                  "Respect de-load weeks when match schedule peaks."
+            ]
+      },
+      {
+            "id": 15,
+            "moduleId": 4,
+            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
+            "title": "15. Pro Footballer 3-Day Gym Split",
+            "youtubeId": "P9XV5Onkqp4",
+            "videoFile": "videos/video_15.mp4",
+            "poster": "https://i.ytimg.com/vi/P9XV5Onkqp4/hqdefault.jpg",
+            "duration": "10:15 min",
+            "level": "Intermediate",
+            "series": "3 Sessions/Week",
+            "reps": "Structured Split",
+            "rest": "90 sec",
+            "goal": "Consistent In-Season Progress",
+            "desc": "How to divide workouts into Upper Body, Lower Body Power, and Matchday-2 Priming for peak Sunday performance.",
+            "mistakes": [
+                  "Do not skip warm-up mobility sets.",
+                  "Adjust volume based on 90-minute match minutes played."
+            ]
+      },
+      {
+            "id": 16,
+            "moduleId": 4,
+            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
+            "title": "16. Soccer Conditioning & Aerobic Power Drills",
+            "youtubeId": "BlabcvHmDcI",
+            "videoFile": "videos/video_16.mp4",
+            "poster": "https://i.ytimg.com/vi/BlabcvHmDcI/hqdefault.jpg",
+            "duration": "8:45 min",
+            "level": "All Levels",
+            "series": "4 - 5 Rounds",
+            "reps": "High Intensity Intervals",
+            "rest": "60 sec",
+            "goal": "Endurance to Sprint Full 90 Minutes",
+            "desc": "Sport-specific conditioning protocols to expand your VO2 max and maintain top pressing speed through extra time.",
+            "mistakes": [
+                  "Do not start at 100% and gas out on the first rep.",
+                  "Track heart rate recovery between sets."
+            ]
+      },
+      {
+            "id": 17,
+            "moduleId": 5,
+            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
+            "title": "17. Injury Bulletproofing: Hamstring & Groin Care",
+            "youtubeId": "7U7OJ5Ge0I4",
+            "videoFile": "videos/video_17.mp4",
+            "poster": "https://i.ytimg.com/vi/7U7OJ5Ge0I4/hqdefault.jpg",
+            "duration": "6:50 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "6 - 8 eccentric reps",
+            "rest": "90 sec",
+            "goal": "Nordic Curls & Copenhagen Plank Prehab",
+            "desc": "Targeted prehab drills to protect the two most vulnerable areas in soccer: hamstrings and adductor groin tendons.",
+            "mistakes": [
+                  "Do not hinge at the hips during Nordic curls.",
+                  "Progress slowly to avoid eccentric muscle strain."
+            ]
+      },
+      {
+            "id": 18,
+            "moduleId": 5,
+            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
+            "title": "18. Full Pro Level Soccer Workout & Recovery",
+            "youtubeId": "vj3w6ZSZwPg",
+            "videoFile": "videos/video_18.mp4",
+            "poster": "https://i.ytimg.com/vi/vj3w6ZSZwPg/hqdefault.jpg",
+            "duration": "21:34 min",
+            "level": "All Levels",
+            "series": "Full Routine",
+            "reps": "Follow Along",
+            "rest": "Guided",
+            "goal": "Active Recovery & Tissue Flush",
+            "desc": "Complete 20-minute follow-along session to flush metabolic waste from heavy matches and restore joint mobility.",
+            "mistakes": [
+                  "Keep intensity low; this is recovery, not fatigue.",
+                  "Focus on full diaphragmatic breathing."
+            ]
+      },
+      {
+            "id": 19,
+            "moduleId": 5,
+            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
+            "title": "19. Elite Strength & Conditioning Session Breakdown",
+            "youtubeId": "eROfTnh-nrk",
+            "videoFile": "videos/video_19.mp4",
+            "poster": "https://i.ytimg.com/vi/eROfTnh-nrk/hqdefault.jpg",
+            "duration": "4:01 min",
+            "level": "Advanced",
+            "series": "4 Sets",
+            "reps": "6 reps",
+            "rest": "90 sec",
+            "goal": "Professional Speed & Athleticism Standards",
+            "desc": "Inside look into how elite European academy and pro first-team players train in the weight room.",
+            "mistakes": [
+                  "Do not copy advanced loads before mastering mechanics.",
+                  "Quality of movement always trumps load."
+            ]
+      },
+      {
+            "id": 20,
+            "moduleId": 5,
+            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
+            "title": "20. Pre-Season & In-Season Gym Periodization",
+            "youtubeId": "PjwryJYXbko",
+            "videoFile": "videos/video_20.mp4",
+            "poster": "https://i.ytimg.com/vi/PjwryJYXbko/hqdefault.jpg",
+            "duration": "7:55 min",
+            "level": "All Levels",
+            "series": "Full Blueprint",
+            "reps": "Year-Round",
+            "rest": "90 sec",
+            "goal": "Long-Term Athletic Career Growth",
+            "desc": "How to transition from high-volume hypertrophy in off-season to power maintenance and speed freshness during the season.",
+            "mistakes": [
+                  "Do not stop lifting weights during the season.",
+                  "Never enter matchday with heavy muscle DOMS."
+            ]
+      }
+];
+
+    let completedLessons = JSON.parse(localStorage.getItem('futforce_en_completed_lessons') || '[]');
+    let currentLessonId = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSidebarModules();
+      loadLesson(1);
+      updateGlobalProgress();
+      loadSavedNotes();
+    });
+
+    // NAVEGACIÓN ENTRE VISTAS PRINCIPALES (VIDEOS / FICHAS / BONOS)
+    function switchMainView(viewName) {
+      document.getElementById('view-videos').classList.add('hidden');
+      document.getElementById('view-fichas').classList.add('hidden');
+      document.getElementById('view-bonos').classList.add('hidden');
+
+      // Desktop Nav States
+      const navVideos = document.getElementById('nav-btn-videos');
+      const navFichas = document.getElementById('nav-btn-fichas');
+      const navBonos = document.getElementById('nav-btn-bonos');
+
+      navVideos.className = "px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white flex items-center gap-1.5 transition-all";
+      navFichas.className = "px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white flex items-center gap-1.5 transition-all";
+      navBonos.className = "px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white flex items-center gap-1.5 transition-all";
+
+      // Mobile Nav States
+      const mobVideos = document.getElementById('mob-nav-videos');
+      const mobFichas = document.getElementById('mob-nav-fichas');
+      const mobBonos = document.getElementById('mob-nav-bonos');
+
+      mobVideos.className = "flex flex-col items-center gap-0.5 text-sport-gray font-bold text-[10px]";
+      mobFichas.className = "flex flex-col items-center gap-0.5 text-sport-gray font-bold text-[10px]";
+      mobBonos.className = "flex flex-col items-center gap-0.5 text-sport-gray font-bold text-[10px]";
+
+      if (viewName === 'videos') {
+        document.getElementById('view-videos').classList.remove('hidden');
+        navVideos.className = "px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black flex items-center gap-1.5 transition-all";
+        mobVideos.className = "flex flex-col items-center gap-0.5 text-sport-green font-black text-[10px]";
+      } else if (viewName === 'fichas') {
+        document.getElementById('view-fichas').classList.remove('hidden');
+        navFichas.className = "px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black flex items-center gap-1.5 transition-all";
+        mobFichas.className = "flex flex-col items-center gap-0.5 text-sport-green font-black text-[10px]";
+      } else if (viewName === 'bonos') {
+        document.getElementById('view-bonos').classList.remove('hidden');
+        navBonos.className = "px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black flex items-center gap-1.5 transition-all";
+        mobBonos.className = "flex flex-col items-center gap-0.5 text-sport-green font-black text-[10px]";
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderSidebarModules() {
+      const container = document.getElementById('modules-list');
+      container.innerHTML = '';
+
+      const modules = [
+        { id: 1, title: "🏋️ Módulo 1: Fuerza y Tren Superior", lessons: courseData.filter(l => l.moduleId === 1) },
+        { id: 2, title: "⚡ Módulo 2: Pliometría y Salto Vertical", lessons: courseData.filter(l => l.moduleId === 2) },
+        { id: 3, title: "💥 Módulo 3: Fuerza Explosiva y Potencia", lessons: courseData.filter(l => l.moduleId === 3) },
+        { id: 4, title: "🛡️ Módulo 4: Core y Preparación Física", lessons: courseData.filter(l => l.moduleId === 4) },
+        { id: 5, title: "🩺 Módulo 5: Recuperación y Rendimiento", lessons: courseData.filter(l => l.moduleId === 5) }
+      ];
+
+      modules.forEach(mod => {
+        const modEl = document.createElement('div');
+        modEl.className = "rounded-xl border border-sport-border bg-sport-card/80 overflow-hidden";
+        
+        let lessonsHtml = mod.lessons.map(lesson => {
+          const isDone = completedLessons.includes(lesson.id);
+          const isCurrent = lesson.id === currentLessonId;
+
+          return `
+            <div 
+              onclick="loadLesson(${lesson.id})"
+              id="lesson-item-${lesson.id}"
+              class="p-2.5 px-3 flex items-center justify-between gap-3 text-xs cursor-pointer border-t border-sport-border/40 transition-all ${isCurrent ? 'bg-sport-green/15 border-l-4 border-l-sport-green font-bold text-white' : 'hover:bg-white/5 text-slate-300'}"
+            >
+              <div class="flex items-center gap-2.5 truncate">
+                <!-- Thumbnail Mini -->
+                <div class="w-10 h-7 rounded bg-black shrink-0 overflow-hidden border border-sport-border relative">
+                  <img src="${lesson.poster}" alt="Thumb" class="w-full h-full object-cover" />
+                </div>
+                <span class="${isDone ? 'text-sport-green font-black' : 'text-sport-gray'} text-xs">
+                  ${isDone ? '✓' : '▶'}
+                </span>
+                <span class="truncate">${lesson.title}</span>
+              </div>
+              <span class="text-[10px] text-sport-gray shrink-0 font-medium">${lesson.duration}</span>
+            </div>
+          `;
+        }).join('');
+
+        modEl.innerHTML = `
+          <div class="p-2.5 bg-black/40 font-display text-[11px] font-black text-slate-200 uppercase tracking-wider flex items-center justify-between">
+            <span>${mod.title}</span>
+            <span class="text-[10px] text-sport-green">${mod.lessons.filter(l => completedLessons.includes(l.id)).length}/${mod.lessons.length}</span>
+          </div>
+          <div>${lessonsHtml}</div>
+        `;
+
+        container.appendChild(modEl);
+      });
+    }
+
+    function loadLesson(id) {
+      currentLessonId = id;
+      const lesson = courseData.find(l => l.id === id);
+      if (!lesson) return;
+
+      // Asegurar vista de videos activa
+      if (document.getElementById('view-videos').classList.contains('hidden')) {
+        switchMainView('videos');
+      }
+
+      // Actualizar Video Frame (YouTube Embed 100% Operativo)
+      const frame = document.getElementById('video-frame');
+      if (frame && lesson.youtubeId) {
+        frame.src = "https://www.youtube-nocookie.com/embed/" + lesson.youtubeId + "?autoplay=1&playsinline=1&rel=0&modestbranding=1";
+      }
+      const ytLink = document.getElementById('btn-youtube-link');
+      if (ytLink && lesson.youtubeId) {
+        ytLink.href = "https://www.youtube.com/watch?v=" + lesson.youtubeId;
+      }
+
+      // Actualizar Textos
+      document.getElementById('badge-module').innerText = lesson.moduleTitle.toUpperCase();
+      document.getElementById('lesson-title').innerText = lesson.title;
+
+      // Actualizar Ficha Técnica
+      document.getElementById('tech-series').innerText = lesson.series;
+      document.getElementById('tech-reps').innerText = lesson.reps;
+      document.getElementById('tech-rest').innerText = lesson.rest;
+      document.getElementById('tech-goal').innerText = lesson.goal;
+      document.getElementById('tech-desc').innerText = lesson.desc;
+
+      document.getElementById('tech-mistakes').innerHTML = lesson.mistakes.map(m => `<li>${m}</li>`).join('');
+
+      updateCompletionButtonState();
+      loadSavedNotes();
+      renderSidebarModules();
+      closeMobileSidebar();
+
+      if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function playOrPauseVideo() {
+      const player = document.getElementById('video-player');
+      const btn = document.getElementById('btn-play-pause');
+      if (player.paused) {
+        player.play();
+        btn.innerHTML = '<span>⏸ Pausar</span>';
+      } else {
+        player.pause();
+        btn.innerHTML = '<span>▶ Reproducir</span>';
+      }
+    }
+
+    function nextLesson() {
+      if (currentLessonId < courseData.length) {
+        loadLesson(currentLessonId + 1);
+      }
+    }
+
+    function prevLesson() {
+      if (currentLessonId > 1) {
+        loadLesson(currentLessonId - 1);
+      }
+    }
+
+    function toggleCurrentLessonCompleted() {
+      const idx = completedLessons.indexOf(currentLessonId);
+      if (idx > -1) {
+        completedLessons.splice(idx, 1);
+      } else {
+        completedLessons.push(currentLessonId);
+      }
+
+      localStorage.setItem('futforce_en_completed_lessons', JSON.stringify(completedLessons));
+      updateCompletionButtonState();
+      updateGlobalProgress();
+      renderSidebarModules();
+    }
+
+    function updateCompletionButtonState() {
+      const isDone = completedLessons.includes(currentLessonId);
+      const btn = document.getElementById('btn-complete');
+      const icon = document.getElementById('complete-icon');
+      const label = document.getElementById('complete-label');
+
+      if (isDone) {
+        btn.className = "shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl font-display text-xs font-black uppercase tracking-wider transition-all duration-300 bg-sport-green text-black border-2 border-sport-green shadow-[0_0_15px_rgba(57,255,20,0.4)] active:scale-95";
+        icon.innerText = "✓";
+        label.innerText = "Completed";
+      } else {
+        btn.className = "shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl font-display text-xs font-black uppercase tracking-wider transition-all duration-300 bg-sport-card border-2 border-sport-green text-sport-green hover:bg-sport-green hover:text-black shadow-md active:scale-95";
+        icon.innerText = "⭕";
+        label.innerText = "Mark as Completed";
+      }
+    }
+
+    function updateGlobalProgress() {
+      const total = courseData.length;
+      const count = completedLessons.length;
+      const pct = Math.round((count / total) * 100);
+
+      document.getElementById('completed-count').innerText = count;
+      document.getElementById('progress-text').innerText = `${pct}%`;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+
+      document.getElementById('completed-count-mobile').innerText = count;
+      document.getElementById('progress-text-mobile').innerText = `${pct}%`;
+      document.getElementById('progress-bar-mobile').style.width = `${pct}%`;
+    }
+
+    function switchTab(tabName) {
+      document.getElementById('tab-ficha').classList.add('hidden');
+      document.getElementById('tab-consejos').classList.add('hidden');
+      document.getElementById('tab-notas').classList.add('hidden');
+
+      document.getElementById('tab-btn-ficha').className = "px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white transition-colors whitespace-nowrap";
+      document.getElementById('tab-btn-consejos').className = "px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white transition-colors whitespace-nowrap";
+      document.getElementById('tab-btn-notas').className = "px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white transition-colors whitespace-nowrap";
+
+      if (tabName === 'ficha') {
+        document.getElementById('tab-ficha').classList.remove('hidden');
+        document.getElementById('tab-btn-ficha').className = "px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black whitespace-nowrap";
+      } else if (tabName === 'consejos') {
+        document.getElementById('tab-consejos').classList.remove('hidden');
+        document.getElementById('tab-btn-consejos').className = "px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black whitespace-nowrap";
+      } else if (tabName === 'notas') {
+        document.getElementById('tab-notas').classList.remove('hidden');
+        document.getElementById('tab-btn-notas').className = "px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black whitespace-nowrap";
+      }
+    }
+
+    function saveUserNotes() {
+      const text = document.getElementById('user-notes').value;
+      localStorage.setItem(`futforce_en_notes_${currentLessonId}`, text);
+      const msg = document.getElementById('notes-saved-msg');
+      msg.classList.remove('hidden');
+      setTimeout(() => msg.classList.add('hidden'), 2000);
+    }
+
+    function loadSavedNotes() {
+      const saved = localStorage.getItem(`futforce_en_notes_${currentLessonId}`) || '';
+      document.getElementById('user-notes').value = saved;
+    }
+
+    function toggleMobileSidebar() {
+      const sidebar = document.getElementById('sidebar-lessons');
+      const overlay = document.getElementById('mobile-overlay');
+
+      if (sidebar.classList.contains('fixed')) {
+        closeMobileSidebar();
+      } else {
+        sidebar.classList.add('fixed', 'inset-y-0', 'right-0', 'z-50', 'w-5/6', 'max-w-sm', 'h-full', 'rounded-none');
+        overlay.classList.remove('hidden');
+      }
+    }
+
+    function closeMobileSidebar() {
+      const sidebar = document.getElementById('sidebar-lessons');
+      const overlay = document.getElementById('mobile-overlay');
+
+      sidebar.classList.remove('fixed', 'inset-y-0', 'right-0', 'z-50', 'w-5/6', 'max-w-sm', 'h-full', 'rounded-none');
+      overlay.classList.add('hidden');
+    }
+
+    // SISTEMA OFICIAL DE DESCARGAS DE PDF
+    function downloadPDF(itemKey, customName) {
+      let pdfUrl = 'pdfs/162-soccer-gym-routines.pdf';
+      let downloadName = 'Master-Book-162-Football-Routines.pdf';
+      let displayName = '+162 Gym & Functional Routines';
+
+      const key = (itemKey || '').toLowerCase();
+      if (key.includes('bonus 1') || key.includes('bonus #1') || key.includes('mobility') || key.includes('movilidad')) {
+        pdfUrl = 'pdfs/bonus1-mobility-for-footballers.pdf';
+        downloadName = 'Bonus-1-Mobility-for-Footballers.pdf';
+        displayName = 'Bonus #1: Mobility for Footballers';
+      } else if (key.includes('bonus 2') || key.includes('bonus #2') || key.includes('nutrition') || key.includes('nutrici')) {
+        pdfUrl = 'pdfs/bonus2-sports-nutrition-guide.pdf';
+        downloadName = 'Bonus-2-Sports-Nutrition-Guide.pdf';
+        displayName = 'Bonus #2: Sports Nutrition Guide';
+      } else if (key.includes('bonus 3') || key.includes('bonus #3') || key.includes('injury') || key.includes('prevention')) {
+        pdfUrl = 'pdfs/bonus3-injury-prevention-protocol.pdf';
+        downloadName = 'Bonus-3-Injury-Prevention-Protocol.pdf';
+        displayName = 'Bonus #3: Injury Prevention Protocol';
+      } else if (key.includes('bonus 4') || key.includes('bonus #4') || key.includes('supplement') || key.includes('suplementaci')) {
+        pdfUrl = 'pdfs/bonus4-supplement-guide.pdf';
+        downloadName = 'Bonus-4-Supplement-Guide.pdf';
+        displayName = 'Bonus #4: Supplement Guide';
+      } else if (key.includes('block 1') || key.includes('bloque 1')) {
+        displayName = 'Block 1: Explosive Strength';
+      } else if (key.includes('block 2') || key.includes('bloque 2')) {
+        displayName = 'Block 2: Speed';
+      } else if (key.includes('block 3') || key.includes('bloque 3')) {
+        displayName = 'Block 3: Match Stamina';
+      } else if (key.includes('block 4') || key.includes('bloque 4')) {
+        displayName = 'Block 4: Explosive Power';
+      } else if (key.includes('block 5') || key.includes('bloque 5')) {
+        displayName = 'Block 5: Core & Injury Prevention';
+      } else if (key.includes('template') || key.includes('tracking') || key.includes('plantilla')) {
+        displayName = 'RPE Progress Tracking Sheet';
+      }
+
+      if (customName) downloadName = customName;
+
+      // Toast notification
+      const toast = document.getElementById('download-toast');
+      const text = document.getElementById('toast-text');
+      if (toast && text) {
+        text.innerText = `Downloading ${displayName}...`;
+        toast.classList.remove('translate-y-[-100px]');
+        toast.classList.add('translate-y-0');
+
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0');
+          toast.classList.add('translate-y-[-100px]');
+        }, 3500);
+      }
+
+      try {
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.setAttribute('download', downloadName);
+        link.setAttribute('target', '_blank');
+        document.body.appendChild(link);
+        link.click();
+        setTimeout(() => {
+          document.body.removeChild(link);
+        }, 200);
+      } catch (err) {
+        console.error('Error al descargar:', err);
+        window.open(pdfUrl, '_blank');
+      }
+    }
+  </script>
+
+</body>
+</html>
+
