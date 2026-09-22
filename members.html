@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>VIP Members Area | +162 Routines & FUTFORCE Method</title>
   
   <!-- Google Fonts: Archivo Black & Inter -->
@@ -104,7 +105,7 @@
         
         <nav class="hidden md:flex items-center gap-1 bg-sport-card p-1 rounded-xl border border-sport-border text-xs font-bold">
           <button onclick="switchMainView('videos')" id="nav-btn-videos" class="px-3.5 py-1.5 rounded-lg bg-sport-green text-black font-black flex items-center gap-1.5 transition-all">
-            <span>🎥</span> <span>Videos Explicativos</span>
+            <span>🎥</span> <span>Video Lessons</span>
           </button>
           <button onclick="switchMainView('fichas')" id="nav-btn-fichas" class="px-3.5 py-1.5 rounded-lg text-sport-gray hover:text-white flex items-center gap-1.5 transition-all">
             <span>📑</span> <span>+162 PDF Routines</span>
@@ -160,13 +161,26 @@
       <div class="w-full bg-sport-surface border border-sport-border p-3 sm:p-4 rounded-3xl shadow-2xl flex flex-col items-center">
         
         <!-- REPRODUCTOR FORMATO 9:16 DIRECTO EN PANTALLA (YOUTUBE EMBED 100% FUNCIONAL) -->
+        <!-- AVISO INTELIGENTE DE TESTE LOCAL (SE ABERTO VIA FILE://) -->
+        <div id="local-file-notice" class="hidden w-full max-w-[360px] mb-3 p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed shadow-lg">
+          <div class="flex items-start gap-2">
+            <span class="text-base leading-none">💡</span>
+            <div>
+              <strong class="font-bold text-amber-300 block mb-0.5">Local Preview Note (file://) :</strong>
+              When opening directly from Windows desktop, YouTube's security policy may display Error 153 due to missing HTTP referrers. On your live hosting (Hostinger) or a local web server, videos play seamlessly! You can also click <strong class="text-sport-green">Open on YouTube</strong> below to watch right away.
+            </div>
+          </div>
+        </div>
+
         <div class="vertical-video-wrapper border-2 border-sport-green/50 relative group bg-black overflow-hidden shadow-2xl">
           <iframe 
             id="video-frame"
-            src="https://www.youtube-nocookie.com/embed/B-28KU1j4lU?autoplay=0&playsinline=1&rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/KdPhOVZTx20?playsinline=1&rel=0&modestbranding=1"
             title="FUTFORCE Video Player"
             class="w-full h-full absolute inset-0 border-0 rounded-2xl"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            loading="lazy"
             allowfullscreen
           ></iframe>
         </div>
@@ -181,7 +195,7 @@
           </button>
           <a 
             id="btn-youtube-link"
-            href="https://www.youtube.com/watch?v=B-28KU1j4lU"
+            href="https://www.youtube.com/shorts/KdPhOVZTx20"
             target="_blank"
             rel="noopener noreferrer"
             class="py-2.5 px-3.5 rounded-xl bg-sport-green text-black hover:bg-emerald-400 text-xs font-black flex items-center justify-center gap-1 transition-all shadow-md active:scale-95"
@@ -238,7 +252,7 @@
               </span>
             </div>
             <h1 id="lesson-title" class="font-display text-base sm:text-xl font-black text-white leading-tight">
-              1. Upper Body Gym Routine for Footballers
+              1. 3 Best Upper Body Exercises for Footballers
             </h1>
           </div>
 
@@ -284,14 +298,14 @@
               </div>
               <div class="bg-sport-card p-3 rounded-xl border border-sport-border">
                 <span class="text-[10px] text-sport-gray uppercase block font-bold">Goal</span>
-                <span id="tech-goal" class="text-xs sm:text-sm font-black text-white truncate">Upper Body Power & Shielding</span>
+                <span id="tech-goal" class="text-xs sm:text-sm font-black text-white truncate">Upper Body Strength & Shielding</span>
               </div>
             </div>
 
             <div class="bg-sport-card p-3.5 rounded-xl border border-sport-border space-y-1.5">
               <h4 class="font-display font-black text-white text-xs sm:text-sm">💡 Key Execution Cues:</h4>
               <p id="tech-desc" class="text-slate-300 leading-relaxed text-xs sm:text-sm">
-                Targeted upper body push and pull exercises to build upper torso mass and shoulder stability without losing agility on the pitch.
+                Essential compound upper body movements designed by pro trainers to win physical 1v1 shoulder duels and protect the ball under pressure.
               </p>
             </div>
           </div>
@@ -334,7 +348,7 @@
           <div class="flex items-center gap-2">
             <span class="text-sport-green text-base">⚡</span>
             <h2 class="font-display text-xs sm:text-sm font-black text-white uppercase tracking-wider">
-              Explanatory Training Videos
+              Explanatory Training Videos (Shorts)
             </h2>
           </div>
           <span class="text-[11px] text-sport-gray font-bold bg-sport-card px-2 py-0.5 rounded-md border border-sport-border">
@@ -413,27 +427,27 @@
             <tr class="hover:bg-white/5">
               <td class="p-3 font-bold text-white">Monday</td>
               <td class="p-3 text-sport-green font-bold">Explosive Strength</td>
-              <td class="p-3">Gym strength routine + core (10 min)</td>
+              <td class="p-3">Gym session + core bulletproofing (10 min)</td>
             </tr>
             <tr class="hover:bg-white/5">
               <td class="p-3 font-bold text-white">Tuesday</td>
               <td class="p-3 text-cyan-400 font-bold">Speed & Agility</td>
-              <td class="p-3">Functional sprint drills + hip mobility</td>
+              <td class="p-3">Functional speed routine + hip mobility</td>
             </tr>
             <tr class="hover:bg-white/5">
               <td class="p-3 font-bold text-white">Wednesday</td>
-              <td class="p-3 text-yellow-400 font-bold">Aerobic Flush (Light) or Active Rest</td>
+              <td class="p-3 text-yellow-400 font-bold">Aerobic Engine (Light) or Active Recovery</td>
               <td class="p-3">Basic mobility circuit or recovery flush</td>
             </tr>
             <tr class="hover:bg-white/5">
               <td class="p-3 font-bold text-white">Thursday</td>
               <td class="p-3 text-purple-400 font-bold">Explosive Power</td>
-              <td class="p-3">Gym power routine or plyometric session</td>
+              <td class="p-3">Gym power session or functional plyometrics</td>
             </tr>
             <tr class="hover:bg-white/5">
               <td class="p-3 font-bold text-white">Friday</td>
-              <td class="p-3 text-orange-400 font-bold">Speed & Core Primer</td>
-              <td class="p-3">Short, high-intensity primer before matchday</td>
+              <td class="p-3 text-orange-400 font-bold">Speed & Core Activation</td>
+              <td class="p-3">Short, high-intensity pre-match activation</td>
             </tr>
             <tr class="hover:bg-white/5 bg-sport-green/5">
               <td class="p-3 font-bold text-sport-green">Saturday / Sunday</td>
@@ -818,17 +832,17 @@
             "id": 1,
             "moduleId": 1,
             "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
-            "title": "1. Upper Body Gym Routine for Footballers",
-            "youtubeId": "B-28KU1j4lU",
+            "title": "1. 3 Best Upper Body Exercises for Footballers",
+            "youtubeId": "KdPhOVZTx20",
             "videoFile": "videos/video_1.mp4",
-            "poster": "https://i.ytimg.com/vi/B-28KU1j4lU/hqdefault.jpg",
-            "duration": "5:08 min",
+            "poster": "https://i.ytimg.com/vi/KdPhOVZTx20/hqdefault.jpg",
+            "duration": "0:58 min",
             "level": "All Levels",
             "series": "4 Sets",
             "reps": "8 - 10 reps",
             "rest": "90 sec",
-            "goal": "Upper Body Power & Match Shielding",
-            "desc": "Targeted upper body push and pull exercises to build upper torso mass and shoulder stability without losing agility on the pitch.",
+            "goal": "Upper Body Strength & Shielding",
+            "desc": "Essential compound upper body movements designed by pro trainers to win physical 1v1 shoulder duels and protect the ball under pressure.",
             "mistakes": [
                   "Do not arch your lower back when pressing.",
                   "Control the eccentric lowering phase to protect your shoulders."
@@ -838,19 +852,19 @@
             "id": 2,
             "moduleId": 1,
             "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
-            "title": "2. Full Upper Body Workout for Soccer Players",
-            "youtubeId": "AzYITycrPFs",
+            "title": "2. Upper Body Gym Workout for Footballers",
+            "youtubeId": "zGhKhEt2vVg",
             "videoFile": "videos/video_2.mp4",
-            "poster": "https://i.ytimg.com/vi/AzYITycrPFs/hqdefault.jpg",
-            "duration": "9:34 min",
+            "poster": "https://i.ytimg.com/vi/zGhKhEt2vVg/hqdefault.jpg",
+            "duration": "0:52 min",
             "level": "Intermediate",
-            "series": "3 - 4 Sets",
-            "reps": "8 - 10 reps",
+            "series": "3 Sets",
+            "reps": "10 reps",
             "rest": "75 sec",
-            "goal": "Upper Body Hypertrophy & Stability",
-            "desc": "Comprehensive follow-along upper body routine designed to develop lean athletic muscle and torso rigidity in 1v1 collisions.",
+            "goal": "Shoulder Stability & Push Power",
+            "desc": "Targeted push-pull sequence building upper torso armor and shoulder girdle stability for aggressive match situations.",
             "mistakes": [
-                  "Avoid swinging weights with momentum.",
+                  "Avoid swinging the weights with momentum.",
                   "Keep your ribcage down and core locked."
             ]
       },
@@ -858,360 +872,360 @@
             "id": 3,
             "moduleId": 1,
             "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
-            "title": "3. 15 Best Upper Body Strength Exercises for Footballers",
-            "youtubeId": "qKhzRqpN21Y",
+            "title": "3. Explosive Upper Body Routine for Footballers",
+            "youtubeId": "TiYt2Czk_bA",
             "videoFile": "videos/video_3.mp4",
-            "poster": "https://i.ytimg.com/vi/qKhzRqpN21Y/hqdefault.jpg",
-            "duration": "4:30 min",
+            "poster": "https://i.ytimg.com/vi/TiYt2Czk_bA/hqdefault.jpg",
+            "duration": "0:45 min",
             "level": "All Levels",
-            "series": "3 Sets",
-            "reps": "10 reps",
-            "rest": "60 sec",
-            "goal": "Functional Football Muscle",
-            "desc": "Top compound movements that translate directly to on-pitch physical duels, aerial contests, and shielding off defenders.",
+            "series": "4 Sets",
+            "reps": "6 - 8 reps",
+            "rest": "90 sec",
+            "goal": "First-Step Physical Dominance",
+            "desc": "High-velocity upper body exercises that develop fast-twitch upper torso power without packing on slow, bulky mass.",
             "mistakes": [
-                  "Do not shrug your shoulders towards your ears.",
-                  "Focus on smooth scapular retraction."
+                  "Do not shrug your shoulders toward your ears.",
+                  "Focus on smooth, explosive concentric acceleration."
             ]
       },
       {
             "id": 4,
             "moduleId": 1,
             "moduleTitle": "Module 1: Upper Body Strength & Physical Shielding",
-            "title": "4. Centre-Back & Physical Duel Power Workout",
-            "youtubeId": "FtK_PNWfkjo",
+            "title": "4. Explosive Football Upper Body Workout",
+            "youtubeId": "pl3L9yJxS3o",
             "videoFile": "videos/video_4.mp4",
-            "poster": "https://i.ytimg.com/vi/FtK_PNWfkjo/hqdefault.jpg",
-            "duration": "8:10 min",
-            "level": "Intermediate - Advanced",
-            "series": "4 Sets",
-            "reps": "6 - 8 reps",
-            "rest": "90 sec",
-            "goal": "Aggressive Shielding & Duel Dominance",
-            "desc": "High-intensity follow-along session modeled after top elite defenders to increase chest, arm, and back bracing strength.",
+            "poster": "https://i.ytimg.com/vi/pl3L9yJxS3o/hqdefault.jpg",
+            "duration": "0:55 min",
+            "level": "Advanced",
+            "series": "3 Sets",
+            "reps": "8 reps",
+            "rest": "60 sec",
+            "goal": "Duel Strength & Balance",
+            "desc": "Pro footballer upper body strength circuits focused on rotational power, anti-rotation control, and contact resilience.",
             "mistakes": [
-                  "Never sacrifice posture for heavier dumbbell loads.",
-                  "Maintain active foot contact throughout."
+                  "Never lose pelvis alignment during pressing.",
+                  "Breathe out forcefully during the concentric exertion."
             ]
       },
       {
             "id": 5,
             "moduleId": 2,
             "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
-            "title": "5. Unilateral Plyometrics Training for Footballers",
-            "youtubeId": "zEhkbjkMWJQ",
+            "title": "5. Football Plyometrics & Speed Drills – Power Boost",
+            "youtubeId": "CbJTeyaJc0Q",
             "videoFile": "videos/video_5.mp4",
-            "poster": "https://i.ytimg.com/vi/zEhkbjkMWJQ/hqdefault.jpg",
-            "duration": "7:32 min",
+            "poster": "https://i.ytimg.com/vi/CbJTeyaJc0Q/hqdefault.jpg",
+            "duration": "0:50 min",
             "level": "All Levels",
             "series": "4 Sets",
-            "reps": "5 jumps per leg",
+            "reps": "6 jumps",
             "rest": "90 sec",
-            "goal": "Single-Leg Takeoff & Elastic Power",
-            "desc": "Unilateral bounding, box step-offs, and lateral hops to build explosive single-leg drive for aerial headers and fast turns.",
+            "goal": "Elastic Power & Vertical Jump",
+            "desc": "High-speed reactive hops and bounds that train the stretch-shortening cycle (SSC) for dominant aerial heading and elevation.",
             "mistakes": [
-                  "Never land with stiff or locked knees.",
-                  "Absorb shock softly through the midfoot."
+                  "Avoid excessive ground contact time; stay light and snappy.",
+                  "Do not let knees cave inwards upon landing."
             ]
       },
       {
             "id": 6,
             "moduleId": 2,
             "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
-            "title": "6. Explosive Lower Body Jump Workout",
-            "youtubeId": "A9zxzfxdw30",
+            "title": "6. Agility, Speed & Plyometrics for Footballers",
+            "youtubeId": "Lw2L_Rcm12o",
             "videoFile": "videos/video_6.mp4",
-            "poster": "https://i.ytimg.com/vi/A9zxzfxdw30/hqdefault.jpg",
-            "duration": "10:19 min",
+            "poster": "https://i.ytimg.com/vi/Lw2L_Rcm12o/hqdefault.jpg",
+            "duration": "0:48 min",
             "level": "Intermediate",
             "series": "4 Sets",
-            "reps": "6 maximal jumps",
-            "rest": "90 sec",
-            "goal": "Header Elevation & Vertical Clearance",
-            "desc": "Progressive plyometric routine to rapidly recruit fast-twitch muscle fibers for higher aerial duels and jumping power.",
+            "reps": "5 reps/side",
+            "rest": "75 sec",
+            "goal": "Deceleration & Reactive Power",
+            "desc": "Unilateral plyometrics drill developing single-leg take-off power and sharp deceleration to cut pass routes and evade opponents.",
             "mistakes": [
-                  "Do not collapse knees inward upon landing.",
-                  "Reset fully before each maximal attempt."
+                  "Never land with a completely stiff knee.",
+                  "Ensure equal force production on both left and right legs."
             ]
       },
       {
             "id": 7,
             "moduleId": 2,
             "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
-            "title": "7. Full Plyometrics & Core Workout for Footballers",
-            "youtubeId": "7N-yqiDS_2s",
+            "title": "7. 8 Essential Plyometrics & Power Drills",
+            "youtubeId": "y9_sA6YNEWE",
             "videoFile": "videos/video_7.mp4",
-            "poster": "https://i.ytimg.com/vi/7N-yqiDS_2s/hqdefault.jpg",
-            "duration": "4:17 min",
+            "poster": "https://i.ytimg.com/vi/y9_sA6YNEWE/hqdefault.jpg",
+            "duration": "0:58 min",
             "level": "All Levels",
             "series": "3 Sets",
-            "reps": "8 rapid reps",
+            "reps": "8 reps",
             "rest": "60 sec",
-            "goal": "Stiffness & Ground Contact Time",
-            "desc": "Reactive hops paired with core bracing to convert your legs into powerful springs and minimize ground contact time.",
+            "goal": "Ankle Stiffness & Explosive Drive",
+            "desc": "Progressive plyometric series strengthening Achilles tendons, foot-ground stiffness, and vertical propulsion.",
             "mistakes": [
-                  "Do not spend long time on the ground between bounds.",
-                  "Drive your arms forcefully on every leap."
+                  "Do not rush between repetitions; reset posture before each leap.",
+                  "Maintain dorsiflexion of the ankle in flight."
             ]
       },
       {
             "id": 8,
             "moduleId": 2,
             "moduleTitle": "Module 2: Plyometrics & Vertical Jump",
-            "title": "8. 10-Minute Explosive Speed & Power Jump Session",
-            "youtubeId": "DOymvQX3voI",
+            "title": "8. Fast-Twitch Muscle & Explosiveness Gym Drills",
+            "youtubeId": "Q1C9nrllhgw",
             "videoFile": "videos/video_8.mp4",
-            "poster": "https://i.ytimg.com/vi/DOymvQX3voI/hqdefault.jpg",
-            "duration": "11:24 min",
-            "level": "All Levels",
-            "series": "3 Sets",
-            "reps": "6 - 8 reps",
-            "rest": "75 sec",
-            "goal": "Deceleration & Explosive Re-acceleration",
-            "desc": "Dynamic jump-to-sprint and change-of-direction mechanics to burst past opponents in the first 5 to 10 yards.",
+            "poster": "https://i.ytimg.com/vi/Q1C9nrllhgw/hqdefault.jpg",
+            "duration": "0:52 min",
+            "level": "Advanced",
+            "series": "4 Sets",
+            "reps": "6 reps",
+            "rest": "90 sec",
+            "goal": "Explosive Muscle Recruitment",
+            "desc": "Short-burst explosive gym training prioritizing maximum velocity of execution to trigger Type IIx muscle fibers.",
             "mistakes": [
-                  "Do not round your spine on the landing catch.",
-                  "Control your momentum before exploding forward."
+                  "Never perform when exhausted; stop if jump height drops.",
+                  "Keep rest periods strictly timed to allow full ATP recovery."
             ]
       },
       {
             "id": 9,
             "moduleId": 3,
-            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
-            "title": "9. Top 10 Gym Exercises for Explosive Footballers",
-            "youtubeId": "ZeNqdvWNbcE",
+            "moduleTitle": "Module 3: Lower Body Power & Pitch Speed",
+            "title": "9. Leg Workout For Footballers",
+            "youtubeId": "0i5EAko8v_Y",
             "videoFile": "videos/video_9.mp4",
-            "poster": "https://i.ytimg.com/vi/ZeNqdvWNbcE/hqdefault.jpg",
-            "duration": "5:16 min",
+            "poster": "https://i.ytimg.com/vi/0i5EAko8v_Y/hqdefault.jpg",
+            "duration": "0:54 min",
             "level": "All Levels",
             "series": "4 Sets",
-            "reps": "6 - 8 reps",
+            "reps": "8 - 10 reps",
             "rest": "90 sec",
-            "goal": "Maximal Force Production in the Gym",
-            "desc": "The definitive gym movements every footballer needs: trap bar deadlifts, split squats, hip thrusts, and power cleans.",
+            "goal": "Lower Body Strength & Hamstrings",
+            "desc": "Compound lower body workout featuring Bulgarian split squats and Romanian deadlifts to build indestructible football legs.",
             "mistakes": [
-                  "Do not lift with a rounded spine.",
-                  "Prioritize barbell speed over grinding heavy weight."
+                  "Do not allow the front knee to wobble sideways.",
+                  "Keep chest tall and maintain neutral spinal alignment."
             ]
       },
       {
             "id": 10,
             "moduleId": 3,
-            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
-            "title": "10. French Contrast Training for First-Step Speed",
-            "youtubeId": "SbuOvHcGm-E",
+            "moduleTitle": "Module 3: Lower Body Power & Pitch Speed",
+            "title": "10. Explosive Leg Day for Footballers",
+            "youtubeId": "RqnWdjkIoxU",
             "videoFile": "videos/video_10.mp4",
-            "poster": "https://i.ytimg.com/vi/SbuOvHcGm-E/hqdefault.jpg",
-            "duration": "12:19 min",
-            "level": "Advanced",
-            "series": "3 - 4 Rounds",
-            "reps": "Complex Split",
-            "rest": "120 sec",
-            "goal": "Sprint Acceleration & Rate of Force",
-            "desc": "Combine heavy strength with unweighted plyometrics to trigger potentiation and unlock explosive breakaway speed.",
+            "poster": "https://i.ytimg.com/vi/RqnWdjkIoxU/hqdefault.jpg",
+            "duration": "0:50 min",
+            "level": "Intermediate",
+            "series": "4 Sets",
+            "reps": "8 reps",
+            "rest": "90 sec",
+            "goal": "Quad Power & Sprint Acceleration",
+            "desc": "High-intensity football leg routine combining heavy resistance with speed-strength transfer to dominate 0-20m sprint acceleration.",
             "mistakes": [
-                  "Do not rush between the contrast pairs.",
-                  "Maintain 100% intent and velocity on every rep."
+                  "Avoid bouncing violently at the bottom of the movement.",
+                  "Focus on pushing through the entire foot surface."
             ]
       },
       {
             "id": 11,
             "moduleId": 3,
-            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
-            "title": "11. Leg Workout to Improve Explosiveness & Sprint Speed",
-            "youtubeId": "qMIO4rs3qH4",
+            "moduleTitle": "Module 3: Lower Body Power & Pitch Speed",
+            "title": "11. Lower Body Exercises For Footballers",
+            "youtubeId": "x9t72mp3_Zk",
             "videoFile": "videos/video_11.mp4",
-            "poster": "https://i.ytimg.com/vi/qMIO4rs3qH4/hqdefault.jpg",
-            "duration": "12:37 min",
-            "level": "Intermediate",
-            "series": "4 Sets",
-            "reps": "6 reps per leg",
-            "rest": "90 sec",
-            "goal": "Single-Leg Sprint Stride & Hip Extension",
-            "desc": "Targeted gym session focusing on glutes, hamstrings, and calves for explosive stride drive and sprinting power.",
+            "poster": "https://i.ytimg.com/vi/x9t72mp3_Zk/hqdefault.jpg",
+            "duration": "0:45 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "10 reps",
+            "rest": "75 sec",
+            "goal": "Unilateral Leg Stability",
+            "desc": "Unilateral dumbbell and cable exercises designed to eliminate leg strength imbalances and power through physical challenges.",
             "mistakes": [
-                  "Avoid forward knee cave on Bulgarian split squats.",
-                  "Keep torso proud and upright."
+                  "Do not shift weight entirely onto the toes.",
+                  "Control the lowering phase over 2-3 seconds."
             ]
       },
       {
             "id": 12,
             "moduleId": 3,
-            "moduleTitle": "Module 3: Explosive Strength & Pitch Power",
-            "title": "12. Fast-Twitch Muscle Building for Football Athletes",
-            "youtubeId": "_vt3SiJLnW4",
+            "moduleTitle": "Module 3: Lower Body Power & Pitch Speed",
+            "title": "12. Soccer Player Leg Day Gym Routine",
+            "youtubeId": "ieT4y-ZuyD4",
             "videoFile": "videos/video_12.mp4",
-            "poster": "https://i.ytimg.com/vi/_vt3SiJLnW4/hqdefault.jpg",
-            "duration": "13:38 min",
-            "level": "All Levels",
+            "poster": "https://i.ytimg.com/vi/ieT4y-ZuyD4/hqdefault.jpg",
+            "duration": "0:55 min",
+            "level": "Advanced",
             "series": "4 Sets",
-            "reps": "5 - 6 reps",
+            "reps": "8 reps",
             "rest": "90 sec",
-            "goal": "Neuromuscular Speed & Ball Strike Power",
-            "desc": "Scientific methods to train the nervous system and build fast-twitch fibers for harder shooting and lightning bursts.",
+            "goal": "Glute Activation & Sprint Force",
+            "desc": "Posterior-chain focused routine activating glutes and hamstrings to maximize horizontal ground propulsion during full sprints.",
             "mistakes": [
-                  "Stop the set once bar speed drops significantly.",
-                  "Do not train to complete muscle failure here."
+                  "Do not overextend lower back at the top lockout.",
+                  "Squeeze glutes actively at peak contraction."
             ]
       },
       {
             "id": 13,
             "moduleId": 4,
-            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
-            "title": "13. Core & Upper Body Functional Strength for Match Play",
-            "youtubeId": "PasHkO5RPxQ",
+            "moduleTitle": "Module 4: Full Gym Conditioning & Pro Strength Split",
+            "title": "13. Full Gym Workout for Football Athletes",
+            "youtubeId": "KtrYpsR9J-c",
             "videoFile": "videos/video_13.mp4",
-            "poster": "https://i.ytimg.com/vi/PasHkO5RPxQ/hqdefault.jpg",
-            "duration": "9:06 min",
+            "poster": "https://i.ytimg.com/vi/KtrYpsR9J-c/hqdefault.jpg",
+            "duration": "0:59 min",
             "level": "All Levels",
             "series": "4 Sets",
-            "reps": "10 reps",
-            "rest": "60 sec",
-            "goal": "Anti-Rotation & Pelvic Rigidity",
-            "desc": "Rotational and anti-lateral flexion core exercises to resist shoulder pushes, hold off defenders, and stabilize the pelvis.",
+            "reps": "8 - 10 reps",
+            "rest": "75 sec",
+            "goal": "Match Intensity & Durability",
+            "desc": "Complete total-body workout routine engineered for professional players balancing in-season gym work with technical pitch sessions.",
             "mistakes": [
-                  "Do not let hips sag during plank variations.",
-                  "Breathe steadily while bracing the midsection."
+                  "Do not train to muscular failure during in-season weeks.",
+                  "Prioritize form and velocity over excessive barbell load."
             ]
       },
       {
             "id": 14,
             "moduleId": 4,
-            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
-            "title": "14. Weight Lifting: Complete Guide to Lifting Weights for Football",
-            "youtubeId": "E8hFE8FHzTA",
+            "moduleTitle": "Module 4: Full Gym Conditioning & Pro Strength Split",
+            "title": "14. Pro Footballers Rank Best Gym Exercises",
+            "youtubeId": "jqF5HUoDDVw",
             "videoFile": "videos/video_14.mp4",
-            "poster": "https://i.ytimg.com/vi/E8hFE8FHzTA/hqdefault.jpg",
-            "duration": "13:57 min",
-            "level": "All Levels",
+            "poster": "https://i.ytimg.com/vi/jqF5HUoDDVw/hqdefault.jpg",
+            "duration": "0:50 min",
+            "level": "Intermediate",
             "series": "3 Sets",
-            "reps": "8 - 10 reps",
-            "rest": "75 sec",
-            "goal": "Injury-Free Strength Periodization",
-            "desc": "A practical breakdown of how to structure gym lifts around team training sessions without accumulating leg soreness.",
+            "reps": "10 reps",
+            "rest": "60 sec",
+            "goal": "Exercise Selection for Soccer",
+            "desc": "Expert breakdown ranking the highest-ROI exercises for footballers versus exercises that waste energy and increase injury risk.",
             "mistakes": [
-                  "Do not squat heavy the day before a match.",
-                  "Respect de-load weeks when match schedule peaks."
+                  "Never copy bodybuilder isolation splits for football.",
+                  "Always select multi-joint athletic movements."
             ]
       },
       {
             "id": 15,
             "moduleId": 4,
-            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
-            "title": "15. Pro Footballer 3-Day Gym Split",
-            "youtubeId": "P9XV5Onkqp4",
+            "moduleTitle": "Module 4: Full Gym Conditioning & Pro Strength Split",
+            "title": "15. Training Like a Footballer, NOT a Bodybuilder",
+            "youtubeId": "82VuHq22Yq4",
             "videoFile": "videos/video_15.mp4",
-            "poster": "https://i.ytimg.com/vi/P9XV5Onkqp4/hqdefault.jpg",
-            "duration": "10:15 min",
-            "level": "Intermediate",
-            "series": "3 Sessions/Week",
-            "reps": "Structured Split",
-            "rest": "90 sec",
-            "goal": "Consistent In-Season Progress",
-            "desc": "How to divide workouts into Upper Body, Lower Body Power, and Matchday-2 Priming for peak Sunday performance.",
+            "poster": "https://i.ytimg.com/vi/82VuHq22Yq4/hqdefault.jpg",
+            "duration": "0:58 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "10 reps",
+            "rest": "60 sec",
+            "goal": "Functional Muscle Without Bulk",
+            "desc": "Crucial principles on how to train for explosive speed, rotational power, and match endurance without feeling stiff or heavy on pitch.",
             "mistakes": [
-                  "Do not skip warm-up mobility sets.",
-                  "Adjust volume based on 90-minute match minutes played."
+                  "Avoid excessive pump-and-burn training that causes severe DOMS.",
+                  "Maintain full athletic range of motion."
             ]
       },
       {
             "id": 16,
             "moduleId": 4,
-            "moduleTitle": "Module 4: Core, Lower Body & Match Engine",
-            "title": "16. Soccer Conditioning & Aerobic Power Drills",
-            "youtubeId": "BlabcvHmDcI",
+            "moduleTitle": "Module 4: Full Gym Conditioning & Pro Strength Split",
+            "title": "16. Gym Workout for Soccer Players",
+            "youtubeId": "-viFFpUbbi8",
             "videoFile": "videos/video_16.mp4",
-            "poster": "https://i.ytimg.com/vi/BlabcvHmDcI/hqdefault.jpg",
-            "duration": "8:45 min",
-            "level": "All Levels",
-            "series": "4 - 5 Rounds",
-            "reps": "High Intensity Intervals",
-            "rest": "60 sec",
-            "goal": "Endurance to Sprint Full 90 Minutes",
-            "desc": "Sport-specific conditioning protocols to expand your VO2 max and maintain top pressing speed through extra time.",
+            "poster": "https://i.ytimg.com/vi/-viFFpUbbi8/hqdefault.jpg",
+            "duration": "0:48 min",
+            "level": "Intermediate",
+            "series": "4 Sets",
+            "reps": "8 reps",
+            "rest": "75 sec",
+            "goal": "Compound Movement Transfer",
+            "desc": "Dynamic gym superset sequence training upper and lower body linkages for seamless power transfer into kicks and changes of direction.",
             "mistakes": [
-                  "Do not start at 100% and gas out on the first rep.",
-                  "Track heart rate recovery between sets."
+                  "Do not rush the transition between supersets.",
+                  "Ensure core is engaged before starting each compound movement."
             ]
       },
       {
             "id": 17,
             "moduleId": 5,
-            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
-            "title": "17. Injury Bulletproofing: Hamstring & Groin Care",
-            "youtubeId": "7U7OJ5Ge0I4",
+            "moduleTitle": "Module 5: Core, Injury Prevention & Pro Recovery",
+            "title": "17. 5 Hip Mobility Exercises for Footballers",
+            "youtubeId": "FtvKB1oRyDE",
             "videoFile": "videos/video_17.mp4",
-            "poster": "https://i.ytimg.com/vi/7U7OJ5Ge0I4/hqdefault.jpg",
-            "duration": "6:50 min",
+            "poster": "https://i.ytimg.com/vi/FtvKB1oRyDE/hqdefault.jpg",
+            "duration": "0:55 min",
             "level": "All Levels",
             "series": "3 Sets",
-            "reps": "6 - 8 eccentric reps",
-            "rest": "90 sec",
-            "goal": "Nordic Curls & Copenhagen Plank Prehab",
-            "desc": "Targeted prehab drills to protect the two most vulnerable areas in soccer: hamstrings and adductor groin tendons.",
+            "reps": "10 reps/side",
+            "rest": "45 sec",
+            "goal": "Hip Flexor Mobility & Groin Health",
+            "desc": "Targeted mobility sequence unlocking tight hip capsules, freeing stride length, and protecting adductors against sudden groin pulls.",
             "mistakes": [
-                  "Do not hinge at the hips during Nordic curls.",
-                  "Progress slowly to avoid eccentric muscle strain."
+                  "Never force stretching into sharp pain.",
+                  "Breathe deeply into each end-range stretch position."
             ]
       },
       {
             "id": 18,
             "moduleId": 5,
-            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
-            "title": "18. Full Pro Level Soccer Workout & Recovery",
-            "youtubeId": "vj3w6ZSZwPg",
+            "moduleTitle": "Module 5: Core, Injury Prevention & Pro Recovery",
+            "title": "18. Core Strength & Athletic Conditioning",
+            "youtubeId": "-TX33IpW0nA",
             "videoFile": "videos/video_18.mp4",
-            "poster": "https://i.ytimg.com/vi/vj3w6ZSZwPg/hqdefault.jpg",
-            "duration": "21:34 min",
-            "level": "All Levels",
-            "series": "Full Routine",
-            "reps": "Follow Along",
-            "rest": "Guided",
-            "goal": "Active Recovery & Tissue Flush",
-            "desc": "Complete 20-minute follow-along session to flush metabolic waste from heavy matches and restore joint mobility.",
+            "poster": "https://i.ytimg.com/vi/-TX33IpW0nA/hqdefault.jpg",
+            "duration": "0:50 min",
+            "level": "Intermediate",
+            "series": "3 Sets",
+            "reps": "12 reps",
+            "rest": "60 sec",
+            "goal": "Rotational Core & Balance",
+            "desc": "Anti-rotation and rotational core routine building a rigid athletic spine to resist opponents leaning into you during sprints.",
             "mistakes": [
-                  "Keep intensity low; this is recovery, not fatigue.",
-                  "Focus on full diaphragmatic breathing."
+                  "Do not let hips sag or rotate during planks.",
+                  "Keep glutes and abs firing simultaneously."
             ]
       },
       {
             "id": 19,
             "moduleId": 5,
-            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
-            "title": "19. Elite Strength & Conditioning Session Breakdown",
-            "youtubeId": "eROfTnh-nrk",
+            "moduleTitle": "Module 5: Core, Injury Prevention & Pro Recovery",
+            "title": "19. Why Footballers Must Train in the Gym",
+            "youtubeId": "Gpt2m6pFlGo",
             "videoFile": "videos/video_19.mp4",
-            "poster": "https://i.ytimg.com/vi/eROfTnh-nrk/hqdefault.jpg",
-            "duration": "4:01 min",
-            "level": "Advanced",
-            "series": "4 Sets",
-            "reps": "6 reps",
-            "rest": "90 sec",
-            "goal": "Professional Speed & Athleticism Standards",
-            "desc": "Inside look into how elite European academy and pro first-team players train in the weight room.",
+            "poster": "https://i.ytimg.com/vi/Gpt2m6pFlGo/hqdefault.jpg",
+            "duration": "0:45 min",
+            "level": "All Levels",
+            "series": "3 Sets",
+            "reps": "10 reps",
+            "rest": "60 sec",
+            "goal": "Injury Resistance & Force Output",
+            "desc": "Scientific overview showing how targeted strength training reduces hamstring tear risk by over 50% and lengthens playing careers.",
             "mistakes": [
-                  "Do not copy advanced loads before mastering mechanics.",
-                  "Quality of movement always trumps load."
+                  "Do not skip gym work during busy match weeks.",
+                  "Modify volume rather than stopping resistance training."
             ]
       },
       {
             "id": 20,
             "moduleId": 5,
-            "moduleTitle": "Module 5: Recovery, Injury Prevention & Pro Mindset",
-            "title": "20. Pre-Season & In-Season Gym Periodization",
-            "youtubeId": "PjwryJYXbko",
+            "moduleTitle": "Module 5: Core, Injury Prevention & Pro Recovery",
+            "title": "20. Football Team Pre-Match Gym Conditioning",
+            "youtubeId": "6eg6_LJ-0B0",
             "videoFile": "videos/video_20.mp4",
-            "poster": "https://i.ytimg.com/vi/PjwryJYXbko/hqdefault.jpg",
-            "duration": "7:55 min",
-            "level": "All Levels",
-            "series": "Full Blueprint",
-            "reps": "Year-Round",
-            "rest": "90 sec",
-            "goal": "Long-Term Athletic Career Growth",
-            "desc": "How to transition from high-volume hypertrophy in off-season to power maintenance and speed freshness during the season.",
+            "poster": "https://i.ytimg.com/vi/6eg6_LJ-0B0/hqdefault.jpg",
+            "duration": "0:52 min",
+            "level": "Advanced",
+            "series": "3 Sets",
+            "reps": "8 reps",
+            "rest": "75 sec",
+            "goal": "Total Body Match Readiness",
+            "desc": "Complete priming routine executed by pro squads before matches to activate the central nervous system without producing fatigue.",
             "mistakes": [
-                  "Do not stop lifting weights during the season.",
-                  "Never enter matchday with heavy muscle DOMS."
+                  "Avoid lifting to exhaustion right before matches.",
+                  "Stop every set with 2-3 reps in reserve (RIR 2-3)."
             ]
       }
 ];
@@ -1325,26 +1339,27 @@
       const lesson = courseData.find(l => l.id === id);
       if (!lesson) return;
 
-      // Asegurar vista de videos activa
+      // Ensure videos view active
       if (document.getElementById('view-videos').classList.contains('hidden')) {
         switchMainView('videos');
       }
 
-      // Actualizar Video Frame (YouTube Embed 100% Operativo)
+      // Update Video Frame (YouTube Shorts Embed with cross-origin referrer)
       const frame = document.getElementById('video-frame');
       if (frame && lesson.youtubeId) {
-        frame.src = "https://www.youtube-nocookie.com/embed/" + lesson.youtubeId + "?autoplay=1&playsinline=1&rel=0&modestbranding=1";
+        frame.src = "https://www.youtube.com/embed/" + lesson.youtubeId + "?autoplay=1&playsinline=1&rel=0&modestbranding=1";
+        frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
       }
       const ytLink = document.getElementById('btn-youtube-link');
       if (ytLink && lesson.youtubeId) {
-        ytLink.href = "https://www.youtube.com/watch?v=" + lesson.youtubeId;
+        ytLink.href = "https://www.youtube.com/shorts/" + lesson.youtubeId;
       }
 
-      // Actualizar Textos
+      // Update Texts
       document.getElementById('badge-module').innerText = lesson.moduleTitle.toUpperCase();
       document.getElementById('lesson-title').innerText = lesson.title;
 
-      // Actualizar Ficha Técnica
+      // Update Specs
       document.getElementById('tech-series').innerText = lesson.series;
       document.getElementById('tech-reps').innerText = lesson.reps;
       document.getElementById('tech-rest').innerText = lesson.rest;
