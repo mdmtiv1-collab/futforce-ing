@@ -161,33 +161,20 @@
       <div class="w-full bg-sport-surface border border-sport-border p-3 sm:p-4 rounded-3xl shadow-2xl flex flex-col items-center">
         
         <!-- REPRODUCTOR FORMATO 9:16 DIRECTO EN PANTALLA (YOUTUBE EMBED 100% FUNCIONAL) -->
-        <!-- AVISO INTELIGENTE DE TESTE LOCAL (SE ABERTO VIA FILE://) -->
-        <div id="local-file-notice" class="hidden w-full max-w-[360px] mb-3 p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed shadow-lg">
-          <div class="flex items-start gap-2">
-            <span class="text-base leading-none">💡</span>
-            <div>
-              <strong class="font-bold text-amber-300 block mb-0.5">Local Preview Note (file://) :</strong>
-              When opening directly from Windows desktop, YouTube's security policy may display Error 153 due to missing HTTP referrers. On your live hosting (Hostinger) or a local web server, videos play seamlessly! You can also click <strong class="text-sport-green">Open on YouTube</strong> below to watch right away.
-            </div>
-          </div>
+        <!-- REPRODUCTOR DE VIDEO NATIVO 9:16 (REPRODUCCIÓN 100% DENTRO DE LA PLATAFORMA) -->
+        <div class="vertical-video-wrapper border-2 border-sport-green/50 relative group bg-black overflow-hidden shadow-2xl rounded-2xl">
+          <video 
+            id="video-player"
+            src="videos/video_1.mp4"
+            poster="https://i.ytimg.com/vi/KdPhOVZTx20/hqdefault.jpg"
+            class="w-full h-full object-cover rounded-2xl"
+            controls
+            playsinline
+            preload="metadata"
+          ></video>
         </div>
 
-        <!-- NOTICE LOCAL WINDOWS (EXIBIDO SOMENTE SE FILE://) -->
-        <div id="local-file-notice" class="hidden w-full max-w-[360px] mb-3 p-3 rounded-2xl bg-sport-card border border-sport-green/40 text-slate-200 text-xs leading-relaxed shadow-xl">
-          <div class="flex items-start gap-2.5">
-            <span class="text-base leading-none">🚀</span>
-            <div>
-              <strong class="font-bold text-sport-green block mb-0.5">Offline / Windows Local Mode:</strong>
-              <span>To play videos embedded directly on this page under Windows, double-click <strong>ABRIR_AREA_DE_MEMBROS.bat</strong> in this folder. Or click the video card below to watch on YouTube right now!</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- REPRODUCTOR FORMATO 9:16 INTELIGENTE (SEM ERRO 153) -->
-        <div id="video-container" class="vertical-video-wrapper border-2 border-sport-green/50 relative group bg-black overflow-hidden shadow-2xl">
-          <!-- Carregado dinamicamente por loadVideoPlayer() -->
-        </div>
-      <!-- CONTROLES DE NAVEGACIÓN RÁPIDA -->
+        <!-- CONTROLES DE NAVEGACIÓN RÁPIDA -->
         <div class="w-full max-w-[360px] mt-3 flex items-center justify-between gap-2">
           <button 
             onclick="prevLesson()"
@@ -1414,14 +1401,21 @@
         switchMainView('videos');
       }
 
-      // Update Video Frame (YouTube Shorts Embed with cross-origin referrer)
-      loadVideoPlayer(lesson);
+      // Reproducción Nativa Dentro de la Plataforma (100% Interna)
+      const player = document.getElementById('video-player');
+      if (player) {
+        player.src = lesson.videoFile || 'videos/video_' + lesson.id + '.mp4';
+        player.poster = lesson.poster || 'https://i.ytimg.com/vi/' + lesson.youtubeId + '/hqdefault.jpg';
+        player.load();
+        player.play().catch(() => {});
+      }
 
       const ytLink = document.getElementById('btn-youtube-link');
       if (ytLink && lesson.youtubeId) {
         ytLink.href = "https://www.youtube.com/shorts/" + lesson.youtubeId;
       }
 
+      // Update Texts
       document.getElementById('badge-module').innerText = lesson.moduleTitle.toUpperCase();
       document.getElementById('lesson-title').innerText = lesson.title;
 
@@ -1432,7 +1426,7 @@
       document.getElementById('tech-goal').innerText = lesson.goal;
       document.getElementById('tech-desc').innerText = lesson.desc;
 
-      document.getElementById('tech-mistakes').innerHTML = lesson.mistakes.map(m => `<li>${m}</li>`).join('');
+      document.getElementById('tech-mistakes').innerHTML = lesson.mistakes.map(m => '<li>' + m + '</li>').join('');
 
       updateCompletionButtonState();
       loadSavedNotes();
