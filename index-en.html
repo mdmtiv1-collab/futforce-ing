@@ -8,7 +8,8 @@
   
   <!-- Critical Local Preload: Plus Jakarta Sans Font & Hero Image (Zero Render-Blocking) -->
   <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" as="image" href="hero-mockup-en.jpg" fetchpriority="high" type="image/jpeg" />
+  <link rel="preload" as="image" href="hero-mockup-en-mobile.webp" type="image/webp" media="(max-width: 640px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="hero-mockup-en.webp" type="image/webp" media="(min-width: 641px)" fetchpriority="high" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="+150 Gym & Functional Soccer Workouts | The FUTFORCE Method" />
@@ -214,17 +215,21 @@
       </p>
 
       <!-- Retina HD Mockup Image -->
-      <div class="mt-6 sm:mt-8 w-full max-w-sm sm:max-w-2xl relative overflow-hidden rounded-2xl" style="contain: layout paint;">
-        <img src="hero-mockup-en.jpg" 
-            alt="Official Mockup +150 Gym & Functional Workouts for Soccer Players FUTFORCE Method" 
-            class="w-full h-auto drop-shadow-2xl rounded-2xl mx-auto transform hover:scale-[1.02] transition-transform duration-300"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            width="1024"
-            height="682"
-            style="width: 100%; height: auto;"
-          />
+      <div class="mt-6 sm:mt-8 w-full max-w-sm sm:max-w-2xl relative overflow-hidden rounded-2xl" style="contain: layout paint; aspect-ratio: 1024/682;">
+        <picture>
+          <source type="image/avif" srcset="hero-mockup-en-mobile.avif 540w, hero-mockup-en.avif 1024w" sizes="(max-width: 640px) 100vw, 672px" />
+          <source type="image/webp" srcset="hero-mockup-en-mobile.webp 540w, hero-mockup-en.webp 1024w" sizes="(max-width: 640px) 100vw, 672px" />
+          <img src="hero-mockup-en.webp" 
+              alt="Official Mockup +150 Gym & Functional Workouts for Soccer Players FUTFORCE Method" 
+              class="w-full h-auto drop-shadow-2xl rounded-2xl mx-auto transform hover:scale-[1.02] transition-transform duration-300"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="1024"
+              height="682"
+              style="width: 100%; height: auto; aspect-ratio: 1024/682;"
+            />
+        </picture>
       </div>
 
       <!-- Primary CTA Button -->
@@ -337,36 +342,36 @@
       <div class="animate-scroll gap-3 sm:gap-4 py-2">
         <!-- Loop 1 -->
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-01-en.webp" alt="01. Total-Body Strength for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-01-en.webp" srcset="ficha-01-en-mobile.webp 400w, ficha-01-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="01. Total-Body Strength for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-02-en.webp" alt="02. Strong Legs to Win Duels - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-02-en.webp" srcset="ficha-02-en-mobile.webp 400w, ficha-02-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="02. Strong Legs to Win Duels - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-03-en.webp" alt="03. Single-Leg Strength for Acceleration - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-03-en.webp" srcset="ficha-03-en-mobile.webp 400w, ficha-03-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="03. Single-Leg Strength for Acceleration - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-04-en.webp" alt="04. Functional Bodyweight Strength - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-04-en.webp" srcset="ficha-04-en-mobile.webp 400w, ficha-04-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="04. Functional Bodyweight Strength - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-05-en.webp" alt="05. Posterior Chain for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-05-en.webp" srcset="ficha-05-en-mobile.webp 400w, ficha-05-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="05. Posterior Chain for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
 
         <!-- Loop 2 (Duplicate for Continuous 100% Fluid Loop) -->
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-01-en.webp" alt="01. Total-Body Strength for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-01-en.webp" srcset="ficha-01-en-mobile.webp 400w, ficha-01-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="01. Total-Body Strength for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-02-en.webp" alt="02. Strong Legs to Win Duels - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-02-en.webp" srcset="ficha-02-en-mobile.webp 400w, ficha-02-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="02. Strong Legs to Win Duels - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-03-en.webp" alt="03. Single-Leg Strength for Acceleration - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-03-en.webp" srcset="ficha-03-en-mobile.webp 400w, ficha-03-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="03. Single-Leg Strength for Acceleration - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-04-en.webp" alt="04. Functional Bodyweight Strength - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-04-en.webp" srcset="ficha-04-en-mobile.webp 400w, ficha-04-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="04. Functional Bodyweight Strength - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
         <div class="w-[200px] sm:w-[280px] shrink-0 rounded-2xl overflow-hidden border-2 border-sport-border shadow-md bg-white" style="aspect-ratio: 585/1024; contain: layout paint;">
-          <img src="ficha-05-en.webp" alt="05. Posterior Chain for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
+          <img src="ficha-05-en.webp" srcset="ficha-05-en-mobile.webp 400w, ficha-05-en.webp 585w" sizes="(max-width: 640px) 200px, 280px" alt="05. Posterior Chain for Footballers - FUTFORCE Workout Card" class="w-full h-auto block" loading="lazy" decoding="async" width="585" height="1024" style="aspect-ratio: 585/1024;" />
         </div>
       </div>
     </div>
@@ -409,6 +414,7 @@
           <!-- Testimonial 1 -->
           <div class="w-[280px] sm:w-[320px] shrink-0 snap-center rounded-3xl overflow-hidden border-2 border-sport-border bg-white shadow-xl hover:border-black transition-all" style="aspect-ratio: 584/1024; contain: layout paint;">
             <img src="depoimento-01-en.webp" 
+                srcset="depoimento-01-en-mobile.webp 380w, depoimento-01-en.webp 584w" sizes="(max-width: 640px) 280px, 320px" 
                 alt="Oliver Bennett - Footballer Testimonial" 
                 class="w-full h-auto block"
                 loading="lazy"
@@ -421,6 +427,7 @@
           <!-- Testimonial 2 -->
           <div class="w-[280px] sm:w-[320px] shrink-0 snap-center rounded-3xl overflow-hidden border-2 border-sport-border bg-white shadow-xl hover:border-black transition-all" style="aspect-ratio: 584/1024; contain: layout paint;">
             <img src="depoimento-02-en.webp" 
+                srcset="depoimento-02-en-mobile.webp 380w, depoimento-02-en.webp 584w" sizes="(max-width: 640px) 280px, 320px" 
                 alt="Daniel Wilson - Footballer Testimonial" 
                 class="w-full h-auto block"
                 loading="lazy"
@@ -433,6 +440,7 @@
           <!-- Testimonial 3 -->
           <div class="w-[280px] sm:w-[320px] shrink-0 snap-center rounded-3xl overflow-hidden border-2 border-sport-border bg-white shadow-xl hover:border-black transition-all" style="aspect-ratio: 584/1024; contain: layout paint;">
             <img src="depoimento-03-en.webp" 
+                srcset="depoimento-03-en-mobile.webp 380w, depoimento-03-en.webp 584w" sizes="(max-width: 640px) 280px, 320px" 
                 alt="Emily Thompson - Footballer Testimonial" 
                 class="w-full h-auto block"
                 loading="lazy"
@@ -445,6 +453,7 @@
           <!-- Testimonial 4 -->
           <div class="w-[280px] sm:w-[320px] shrink-0 snap-center rounded-3xl overflow-hidden border-2 border-sport-border bg-white shadow-xl hover:border-black transition-all" style="aspect-ratio: 584/1024; contain: layout paint;">
             <img src="depoimento-04-en.webp" 
+                srcset="depoimento-04-en-mobile.webp 380w, depoimento-04-en.webp 584w" sizes="(max-width: 640px) 280px, 320px" 
                 alt="James Parker - Footballer Testimonial" 
                 class="w-full h-auto block"
                 loading="lazy"
@@ -567,7 +576,11 @@
         <!-- Bonus 1 -->
         <div class="group h-full rounded-2xl sm:rounded-3xl border border-sport-border bg-sport-card p-3.5 sm:p-6 shadow-sm text-center flex flex-col items-center hover:border-black transition-all">
           <div class="mb-3 sm:mb-5 w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-sport-border shadow-inner" style="aspect-ratio: 1/1; contain: layout paint;">
-            <img src="bonus-1-en.webp" alt="Bonus 1: Mobility for Athletes - Move Better. Train Better." class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            <picture>
+              <source type="image/avif" srcset="bonus-1-en-mobile.avif 380w, bonus-1-en.avif 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <source type="image/webp" srcset="bonus-1-en-mobile.webp 380w, bonus-1-en.webp 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <img src="bonus-1-en.webp" alt="Bonus 1: Mobility for Athletes - Move Better. Train Better." class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            </picture>
           </div>
           <span class="text-[10px] sm:text-xs font-black text-sport-gray uppercase mb-0.5">BONUS #1</span>
           <h3 class="font-display text-xs sm:text-base font-black text-black leading-tight">Mobility for Athletes</h3>
@@ -577,7 +590,11 @@
         <!-- Bonus 2 -->
         <div class="group h-full rounded-2xl sm:rounded-3xl border border-sport-border bg-sport-card p-3.5 sm:p-6 shadow-sm text-center flex flex-col items-center hover:border-black transition-all">
           <div class="mb-3 sm:mb-5 w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-sport-border shadow-inner" style="aspect-ratio: 1/1; contain: layout paint;">
-            <img src="bonus-2-en.webp" alt="Bonus 2: Nutrition Guide for Footballers - Fuel Your Football Training" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            <picture>
+              <source type="image/avif" srcset="bonus-2-en-mobile.avif 380w, bonus-2-en.avif 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <source type="image/webp" srcset="bonus-2-en-mobile.webp 380w, bonus-2-en.webp 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <img src="bonus-2-en.webp" alt="Bonus 2: Nutrition Guide for Footballers - Fuel Your Football Training" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            </picture>
           </div>
           <span class="text-[10px] sm:text-xs font-black text-sport-gray uppercase mb-0.5">BONUS #2</span>
           <h3 class="font-display text-xs sm:text-base font-black text-black leading-tight">Nutrition Guide for Footballers</h3>
@@ -587,7 +604,11 @@
         <!-- Bonus 3 -->
         <div class="group h-full rounded-2xl sm:rounded-3xl border border-sport-border bg-sport-card p-3.5 sm:p-6 shadow-sm text-center flex flex-col items-center hover:border-black transition-all">
           <div class="mb-3 sm:mb-5 w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-sport-border shadow-inner" style="aspect-ratio: 1/1; contain: layout paint;">
-            <img src="bonus-3-en.webp" alt="Bonus 3: Injury Prevention Protocol for Footballers - Prepare Today. Play With Confidence." class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            <picture>
+              <source type="image/avif" srcset="bonus-3-en-mobile.avif 380w, bonus-3-en.avif 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <source type="image/webp" srcset="bonus-3-en-mobile.webp 380w, bonus-3-en.webp 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <img src="bonus-3-en.webp" alt="Bonus 3: Injury Prevention Protocol for Footballers - Prepare Today. Play With Confidence." class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            </picture>
           </div>
           <span class="text-[10px] sm:text-xs font-black text-sport-gray uppercase mb-0.5">BONUS #3</span>
           <h3 class="font-display text-xs sm:text-base font-black text-black leading-tight">Injury Prevention Protocol</h3>
@@ -597,7 +618,11 @@
         <!-- Bonus 4 -->
         <div class="group h-full rounded-2xl sm:rounded-3xl border border-sport-border bg-sport-card p-3.5 sm:p-6 shadow-sm text-center flex flex-col items-center hover:border-black transition-all">
           <div class="mb-3 sm:mb-5 w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-sport-border shadow-inner" style="aspect-ratio: 1/1; contain: layout paint;">
-            <img src="bonus-4-en.webp" alt="Bonus 4: Supplement Guide for Footballers - Understanding Supplements in Sports Nutrition" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            <picture>
+              <source type="image/avif" srcset="bonus-4-en-mobile.avif 380w, bonus-4-en.avif 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <source type="image/webp" srcset="bonus-4-en-mobile.webp 380w, bonus-4-en.webp 600w" sizes="(max-width: 640px) 180px, 280px" />
+              <img src="bonus-4-en.webp" alt="Bonus 4: Supplement Guide for Footballers - Understanding Supplements in Sports Nutrition" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="600" style="aspect-ratio: 1/1;" />
+            </picture>
           </div>
           <span class="text-[10px] sm:text-xs font-black text-sport-gray uppercase mb-0.5">BONUS #4</span>
           <h3 class="font-display text-xs sm:text-base font-black text-black leading-tight">Supplement Guide for Footballers</h3>
@@ -857,7 +882,10 @@
       <div class="rounded-2xl sm:rounded-3xl border-2 border-black bg-black p-6 sm:p-10 text-center flex flex-col items-center shadow-2xl">
         
         <div class="mb-4 w-full max-w-[160px] sm:max-w-[210px] mx-auto aspect-square" style="aspect-ratio: 1/1; contain: layout paint;">
-          <img src="garantia-en.webp" alt="7-Day Unconditional Money-Back Guarantee - FUTFORCE Method" class="w-full h-auto drop-shadow-lg mx-auto" loading="lazy" decoding="async" width="210" height="210" style="aspect-ratio: 1/1;" />
+          <picture>
+            <source type="image/avif" srcset="garantia-en.avif" />
+            <img src="garantia-en.webp" alt="7-Day Unconditional Money-Back Guarantee - FUTFORCE Method" class="w-full h-auto drop-shadow-lg mx-auto" loading="lazy" decoding="async" width="210" height="210" style="aspect-ratio: 1/1;" />
+          </picture>
         </div>
 
         <h3 class="font-display text-xl sm:text-3xl font-black text-white">
