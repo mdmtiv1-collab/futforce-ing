@@ -2882,10 +2882,10 @@
           { id: 5, title: "Block 5: Core & Bulletproof Armor", emoji: "🛡️", desc: "Dynamic planks, rotational power and hamstring reinforcement to prevent muscular injuries.", meta: "32 Workouts • Official PDF", color: "teal" }
         ],
         bonosList: [
-          { id: 1, title: "Mobility Manual for Footballers", emoji: "🧘", desc: "Dynamic mobility routines to unlock hips, ankles, and thoracic spine before training.", meta: "Official PDF • 14 Pages" },
-          { id: 2, title: "Sports Nutrition Guide for Footballers", emoji: "🥗", desc: "What to eat pre-match, at halftime, and post-match for sustained high energy.", meta: "Official PDF • 16 Pages" },
-          { id: 3, title: "Injury Prevention Protocol in Football", emoji: "🩹", desc: "Practical exercises to protect tendons, groin, and knees from injuries.", meta: "Official PDF • 14 Pages" },
-          { id: 4, title: "Strategic Supplementation Guide", emoji: "💊", desc: "Creatine, beta-alanine, electrolytes, and caffeine clearly explained for athletes.", meta: "Official PDF • 14 Pages" }
+          { id: 1, title: "+30 Speed, Acceleration & Agility Workouts", emoji: "💨", desc: "A complete bank of routines to start faster, reach your top speed sooner and change direction without losing body control.", meta: "Official PDF • 40 Pages" },
+          { id: 2, title: "+30 Workouts to Improve Shot Power & Accuracy", emoji: "⚽", desc: "A complete bank of technique, applied strength and finishing-under-pressure routines, to turn chances into goals with more power and better aim.", meta: "Official PDF • 40 Pages" },
+          { id: 3, title: "+20 Endurance Workouts to Last the Full 90 Minutes", emoji: "⏱️", desc: "A bank of aerobic, intermittent and ball-based endurance routines, to reach minute 90 fully fit without losing intensity or clarity of decision-making.", meta: "Official PDF • 30 Pages" },
+          { id: 4, title: "+50 Post-Match Recovery Workouts", emoji: "🔋", desc: "A complete bank of recovery routines organized around the 48-72 hours following a match, to return to training faster, stronger and with less injury risk.", meta: "Official PDF • 60 Pages" }
         ]
       },
       pt: {
@@ -3598,22 +3598,22 @@
       let displayName = isPT ? '+162 Fichas de Treino de Ginásio (PT)' : '+162 Gym & Functional Workouts (EN)';
 
       const key = (itemKey || '').toLowerCase();
-      if (key.includes('bono 1') || key.includes('bono #1') || key.includes('bónus 1') || key.includes('bónus #1') || key.includes('bonus 1') || key.includes('bonus #1') || key.includes('mobility') || key.includes('mobilidade')) {
-        pdfUrl = isPT ? 'pdfs/bono1-mobilidade-futebolistas-pt.pdf' : 'pdfs/bonus1-mobility-footballers-en.pdf';
-        downloadName = isPT ? 'Bonus-1-Mobilidade-para-Futebolistas.pdf' : 'Bonus-1-Mobility-for-Footballers.pdf';
-        displayName = isPT ? 'Bónus #1: Mobilidade para Futebolistas (PT)' : 'Bonus #1: Mobility for Footballers (EN)';
-      } else if (key.includes('bono 2') || key.includes('bono #2') || key.includes('bónus 2') || key.includes('bónus #2') || key.includes('bonus 2') || key.includes('bonus #2') || key.includes('nutri')) {
-        pdfUrl = isPT ? 'pdfs/bono2-nutricao-desportiva-pt.pdf' : 'pdfs/bonus2-sports-nutrition-en.pdf';
-        downloadName = isPT ? 'Bonus-2-Nutricao-Desportiva.pdf' : 'Bonus-2-Sports-Nutrition.pdf';
-        displayName = isPT ? 'Bónus #2: Guia de Nutrição Desportiva (PT)' : 'Bonus #2: Sports Nutrition Guide (EN)';
-      } else if (key.includes('bono 3') || key.includes('bono #3') || key.includes('bónus 3') || key.includes('bónus #3') || key.includes('bonus 3') || key.includes('bonus #3') || key.includes('lesion') || key.includes('anti-les') || key.includes('lesões') || key.includes('injury')) {
-        pdfUrl = isPT ? 'pdfs/bono3-protocolo-antilesoes-pt.pdf' : 'pdfs/bonus3-injury-prevention-en.pdf';
-        downloadName = isPT ? 'Bonus-3-Protocolo-Anti-Lesoes.pdf' : 'Bonus-3-Injury-Prevention-Protocol.pdf';
-        displayName = isPT ? 'Bónus #3: Protocolo Anti-Lesões (PT)' : 'Bonus #3: Injury Prevention Protocol (EN)';
-      } else if (key.includes('bono 4') || key.includes('bono #4') || key.includes('bónus 4') || key.includes('bónus #4') || key.includes('bonus 4') || key.includes('bonus #4') || key.includes('suplementa') || key.includes('suplementação') || key.includes('supplement')) {
-        pdfUrl = isPT ? 'pdfs/bono4-guia-suplementacao-pt.pdf' : 'pdfs/bonus4-supplementation-guide-en.pdf';
-        downloadName = isPT ? 'Bonus-4-Guia-de-Suplementacao.pdf' : 'Bonus-4-Strategic-Supplementation-Guide.pdf';
-        displayName = isPT ? 'Bónus #4: Guia de Suplementação (PT)' : 'Bonus #4: Strategic Supplementation Guide (EN)';
+      if (key.includes('bono 1') || key.includes('bono #1') || key.includes('bónus 1') || key.includes('bónus #1') || key.includes('bonus 1') || key.includes('bonus #1') || key.includes('speed') || key.includes('aceler') || key.includes('agility') || key.includes('mobility') || key.includes('mobilidade')) {
+        pdfUrl = isPT ? 'pdfs/bono1-mobilidade-futebolistas-pt.pdf' : 'pdfs/bonus1-speed-acceleration-en.pdf';
+        downloadName = isPT ? 'Bonus-1-Mobilidade-para-Futebolistas.pdf' : 'Bonus-1-Speed-Acceleration-and-Agility-Workouts.pdf';
+        displayName = isPT ? 'Bónus #1: Mobilidade para Futebolistas (PT)' : 'Bonus #1: +30 Speed & Acceleration Workouts (EN)';
+      } else if (key.includes('bono 2') || key.includes('bono #2') || key.includes('bónus 2') || key.includes('bónus #2') || key.includes('bonus 2') || key.includes('bonus #2') || key.includes('shot') || key.includes('power & accuracy') || key.includes('remate') || key.includes('chute') || key.includes('nutri')) {
+        pdfUrl = isPT ? 'pdfs/bono2-nutricao-desportiva-pt.pdf' : 'pdfs/bonus2-shot-power-accuracy-en.pdf';
+        downloadName = isPT ? 'Bonus-2-Nutricao-Desportiva.pdf' : 'Bonus-2-Shot-Power-and-Accuracy-Workouts.pdf';
+        displayName = isPT ? 'Bónus #2: Guia de Nutrição Desportiva (PT)' : 'Bonus #2: +30 Shot Power & Accuracy Workouts (EN)';
+      } else if (key.includes('bono 3') || key.includes('bono #3') || key.includes('bónus 3') || key.includes('bónus #3') || key.includes('bonus 3') || key.includes('bonus #3') || key.includes('endurance') || key.includes('full 90') || key.includes('90 min') || key.includes('lesion') || key.includes('anti-les') || key.includes('lesões') || key.includes('injury')) {
+        pdfUrl = isPT ? 'pdfs/bono3-protocolo-antilesoes-pt.pdf' : 'pdfs/bonus3-endurance-90-minutes-en.pdf';
+        downloadName = isPT ? 'Bonus-3-Protocolo-Anti-Lesoes.pdf' : 'Bonus-3-Endurance-for-90-Minutes-Workouts.pdf';
+        displayName = isPT ? 'Bónus #3: Protocolo Anti-Lesões (PT)' : 'Bonus #3: +20 Endurance for 90 Minutes Workouts (EN)';
+      } else if (key.includes('bono 4') || key.includes('bono #4') || key.includes('bónus 4') || key.includes('bónus #4') || key.includes('bonus 4') || key.includes('bonus #4') || key.includes('recovery') || key.includes('post-match') || key.includes('recupera') || key.includes('suplementa') || key.includes('suplementação') || key.includes('supplement')) {
+        pdfUrl = isPT ? 'pdfs/bono4-guia-suplementacao-pt.pdf' : 'pdfs/bonus4-post-match-recovery-en.pdf';
+        downloadName = isPT ? 'Bonus-4-Guia-de-Suplementacao.pdf' : 'Bonus-4-Post-Match-Recovery-Workouts.pdf';
+        displayName = isPT ? 'Bónus #4: Guia de Suplementação (PT)' : 'Bonus #4: +50 Post-Match Recovery Workouts (EN)';
       } else if (key.includes('bloco') || key.includes('block') || key.includes('bloque')) {
         pdfUrl = isPT ? 'pdfs/livro-162-treinos-futforce-pt.pdf' : 'pdfs/book-162-workouts-futforce-en.pdf';
         if (key.includes('1')) displayName = isPT ? 'Bloco 1 (Livro Mestre FUTFORCE)' : 'Block 1 (Master Book FUTFORCE)';
